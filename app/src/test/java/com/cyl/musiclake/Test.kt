@@ -1,7 +1,6 @@
 package com.cyl.musiclake
 
-import com.cyl.musiclake.bean.Album
-import com.cyl.musiclake.utils.FormatUtil
+import com.midas.music.utils.FormatUtil
 import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException
 import org.jaudiotagger.audio.exceptions.ReadOnlyFileException
 import org.jaudiotagger.audio.mp3.MP3File

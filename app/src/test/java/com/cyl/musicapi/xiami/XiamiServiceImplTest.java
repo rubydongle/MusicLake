@@ -1,6 +1,6 @@
 package com.cyl.musicapi.xiami;
 
-import com.cyl.musiclake.api.FetchUtils;
+import com.midas.music.api.FetchUtils;
 
 import org.junit.Test;
 

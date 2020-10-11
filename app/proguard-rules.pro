@@ -98,7 +98,7 @@
     *;
 }
 -dontwarn com.cyl.musiclake.api.music.doupan.DoubanMusic.**
--keep class com.cyl.musiclake.api.music.doupan.DoubanMusic {
+-keep class com.midas.music.api.music.doupan.DoubanMusic {
     *;
 }
 

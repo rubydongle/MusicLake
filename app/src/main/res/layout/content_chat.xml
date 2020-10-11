@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.chat.ChatActivity"
+    tools:context="com.midas.music.ui.chat.ChatActivity"
     tools:showIn="@layout/activity_chat">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

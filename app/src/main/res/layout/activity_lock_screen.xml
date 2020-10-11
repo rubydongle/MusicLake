@@ -89,7 +89,7 @@
 
     </LinearLayout>
 
-    <com.cyl.musiclake.ui.widget.LyricView
+    <com.midas.music.ui.widget.LyricView
         android:id="@+id/lyricView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_200"

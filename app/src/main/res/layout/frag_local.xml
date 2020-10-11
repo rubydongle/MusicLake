@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.cyl.musiclake.ui.widget.LocalItemView
+                <com.midas.music.ui.widget.LocalItemView
                     android:id="@+id/localView"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_56"
@@ -40,7 +40,7 @@
                     app:tv_name="@string/item_local" />
 
 
-                <com.cyl.musiclake.ui.widget.LocalItemView
+                <com.midas.music.ui.widget.LocalItemView
                     android:id="@+id/historyView"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_56"
@@ -51,7 +51,7 @@
                     app:tv_name="@string/item_history" />
 
 
-                <com.cyl.musiclake.ui.widget.LocalItemView
+                <com.midas.music.ui.widget.LocalItemView
                     android:id="@+id/favoriteView"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_56"
@@ -61,7 +61,7 @@
                     app:tv_desc="@string/default_num"
                     app:tv_name="@string/item_favorite" />
 
-                <com.cyl.musiclake.ui.widget.LocalItemView
+                <com.midas.music.ui.widget.LocalItemView
                     android:id="@+id/videoView"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_56"
@@ -71,7 +71,7 @@
                     app:tv_desc="@string/default_num"
                     app:tv_name="@string/item_video" />
 
-                <com.cyl.musiclake.ui.widget.LocalItemView
+                <com.midas.music.ui.widget.LocalItemView
                     android:id="@+id/downloadView"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_56"

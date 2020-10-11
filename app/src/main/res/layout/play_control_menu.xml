@@ -44,7 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.cyl.musiclake.ui.widget.PlayPauseView
+    <com.midas.music.ui.widget.PlayPauseView
         android:id="@+id/playPauseView"
         android:layout_width="@dimen/dp_36"
         android:layout_height="@dimen/dp_36"
