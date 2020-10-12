@@ -18,23 +18,18 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.midas.music.R;
 import com.midas.music.bean.Music;
-import com.midas.music.bean.SocketOnlineEvent;
 import com.midas.music.common.Constants;
 import com.midas.music.common.NavigationHelper;
 import com.midas.music.event.CountDownEvent;
 import com.midas.music.event.LoginEvent;
 import com.midas.music.event.MetaChangedEvent;
 import com.midas.music.player.PlayManager;
-import com.midas.music.socket.SocketManager;
 import com.midas.music.ui.UIUtilsKt;
 import com.midas.music.ui.base.BaseActivity;
-import com.midas.music.ui.chat.ChatActivity;
-import com.midas.music.ui.music.importplaylist.ImportPlaylistActivity;
+import com.midas.music.ui.equalizer.EqualizerActivity;
 import com.midas.music.ui.music.search.SearchActivity;
 import com.midas.music.ui.my.BindLoginActivity;
-import com.midas.music.ui.my.LoginActivity;
 import com.midas.music.ui.my.user.User;
-import com.midas.music.ui.my.user.UserStatus;
 import com.midas.music.ui.settings.AboutActivity;
 import com.midas.music.ui.settings.SettingsActivity;
 import com.midas.music.ui.timing.SleepTimerActivity;
@@ -58,15 +53,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
-import static com.midas.music.ui.UIUtilsKt.logout;
-import static com.midas.music.ui.UIUtilsKt.updateLoginToken;
-
-/**
- * 描述 主要的Activity
- *
- * @author yonglong
- * @date 2016/8/3
- */
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.nav_view)
@@ -104,7 +90,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         mNavigationView.setNavigationItemSelectedListener(this);
         mNavigationView.setItemIconTintList(null);
         disableNavigationViewScrollbars(mNavigationView);
-        checkLoginStatus();
+//        checkLoginStatus();
         initCountDownView();
         //检查更新
         Beta.checkUpgrade(false, false);
@@ -129,11 +115,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         mBindNeteaseView = mHeaderView.findViewById(R.id.heard_netease);
         mShowBindIv = mHeaderView.findViewById(R.id.show_sync_iv);
         mShowBindIv.setOnClickListener(v -> {
-            if (mNavigationView.getMenu().findItem(R.id.nav_bind_wy).isVisible()) {
-                mShowBindIv.setImageResource(R.drawable.ic_arrow_drop_up);
-            } else {
+////            if (mNavigationView.getMenu().findItem(R.id.nav_bind_wy).isVisible()) {
+////                mShowBindIv.setImageResource(R.drawable.ic_arrow_drop_up);
+////            } else {
                 mShowBindIv.setImageResource(R.drawable.ic_arrow_drop_down);
-            }
+//            }
         });
 
     }
@@ -240,32 +226,32 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_login_status:
-                if (mIsLogin) {
-                    UIUtilsKt.showInfoDialog(this, getString(R.string.app_name), getString(R.string.logout_prompt), () -> {
-                        logout();
-                        return null;
-                    });
-                } else {
-                    mTargetClass = LoginActivity.class;
-                }
-                mDrawerLayout.closeDrawers();
-                break;
+//            case R.id.nav_login_status:
+//                if (mIsLogin) {
+//                    UIUtilsKt.showInfoDialog(this, getString(R.string.app_name), getString(R.string.logout_prompt), () -> {
+//                        logout();
+//                        return null;
+//                    });
+//                } else {
+//                    mTargetClass = LoginActivity.class;
+//                }
+//                mDrawerLayout.closeDrawers();
+//                break;
             case R.id.nav_menu_playQueue:
                 NavigationHelper.INSTANCE.navigatePlayQueue(this);
                 break;
-            case R.id.nav_bind_wy:
-                checkBindNeteaseStatus(false, null);
-                break;
-            case R.id.nav_menu_import:
-                mTargetClass = ImportPlaylistActivity.class;
-                break;
+//            case R.id.nav_bind_wy:
+//                checkBindNeteaseStatus(false, null);
+//                break;
+//            case R.id.nav_menu_import:
+//                mTargetClass = ImportPlaylistActivity.class;
+//                break;
             case R.id.nav_menu_setting:
                 mTargetClass = SettingsActivity.class;
                 break;
-            case R.id.nav_menu_online_num:
-                mTargetClass = ChatActivity.class;
-                break;
+//            case R.id.nav_menu_online_num:
+//                mTargetClass = ChatActivity.class;
+//                break;
             case R.id.nav_menu_count_down:
                 mTargetClass = SleepTimerActivity.class;
                 break;
@@ -275,16 +261,17 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.nav_menu_about:
                 mTargetClass = AboutActivity.class;
                 break;
-            case R.id.nav_menu_test:
-                mTargetClass = TestActivity.class;
-                break;
+//            case R.id.nav_menu_test:
+//                mTargetClass = TestActivity.class;
+//                break;
             case R.id.nav_menu_equalizer:
-                NavigationHelper.INSTANCE.navigateToSoundEffect(this);
+//                NavigationHelper.INSTANCE.navigateToSoundEffect(this);
+                mTargetClass = EqualizerActivity.class;
                 break;
-            case R.id.nav_menu_exit:
-                mTargetClass = null;
-                finish();
-                break;
+//            case R.id.nav_menu_exit:
+//                mTargetClass = null;
+//                finish();
+//                break;
         }
         mDrawerLayout.closeDrawers();
         return false;
@@ -363,27 +350,27 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     /**
      * 设置用户状态信息
      */
-    private void setUserStatusInfo(Boolean isLogin, User user) {
-        mIsLogin = isLogin;
-        if (mIsLogin && user != null) {
-            SocketManager.INSTANCE.toggleSocket(true);
-            String url = user.getAvatar();
-            CoverLoader.INSTANCE.loadImageView(this, url, R.drawable.ic_account_circle, mAvatarIcon);
-            mName.setText(user.getNick());
-//            mShowBindIv.setVisibility(View.VISIBLE);
-            mNavigationView.getMenu().findItem(R.id.nav_login_status).setTitle(getResources().getString(R.string.logout_hint))
-                    .setIcon(R.drawable.ic_exit);
-        } else {
-            SocketManager.INSTANCE.toggleSocket(false);
-            mAvatarIcon.setImageResource(R.drawable.ic_account_circle);
-            mName.setText(getResources().getString(R.string.app_name));
-//            mShowBindIv.setVisibility(View.GONE);
-            mNavigationView.getMenu().findItem(R.id.nav_login_status).setTitle(getResources().getString(R.string.login_hint))
-                    .setIcon(R.drawable.ic_exit);
-
-            mNavigationView.getMenu().removeItem(R.id.nav_menu_online_num);
-        }
-    }
+//    private void setUserStatusInfo(Boolean isLogin, User user) {
+//        mIsLogin = isLogin;
+//        if (mIsLogin && user != null) {
+//            SocketManager.INSTANCE.toggleSocket(true);
+//            String url = user.getAvatar();
+//            CoverLoader.INSTANCE.loadImageView(this, url, R.drawable.ic_account_circle, mAvatarIcon);
+//            mName.setText(user.getNick());
+////            mShowBindIv.setVisibility(View.VISIBLE);
+//            mNavigationView.getMenu().findItem(R.id.nav_login_status).setTitle(getResources().getString(R.string.logout_hint))
+//                    .setIcon(R.drawable.ic_exit);
+//        } else {
+//            SocketManager.INSTANCE.toggleSocket(false);
+//            mAvatarIcon.setImageResource(R.drawable.ic_account_circle);
+//            mName.setText(getResources().getString(R.string.app_name));
+////            mShowBindIv.setVisibility(View.GONE);
+//            mNavigationView.getMenu().findItem(R.id.nav_login_status).setTitle(getResources().getString(R.string.login_hint))
+//                    .setIcon(R.drawable.ic_exit);
+//
+//            mNavigationView.getMenu().removeItem(R.id.nav_menu_online_num);
+//        }
+//    }
 
     /**
      * 登陆成功重新设置用户
@@ -391,49 +378,49 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
      *
      * @param event
      */
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void updateUserInfo(LoginEvent event) {
-        if (event.getUser() != null) {
-            //更新绑定UI
-            if (event.getStatus() && event.getUser().getType().equals(Constants.NETEASE)) {
-                mNavigationView.getMenu().findItem(R.id.nav_bind_wy).setTitle("已绑定网易云音乐(" + event.getUser().getName() + ")");
-                if (event.getUser().getAvatar().length() > 0) {
-                    CoverLoader.INSTANCE.loadDrawable(this, event.getUser().getAvatar(), drawable -> {
-                        mNavigationView.getMenu().findItem(R.id.nav_bind_wy).setIcon(drawable);
-                        return null;
-                    });
-                }
-                return;
-            }
-        }
-        //更新用户头像
-        setUserStatusInfo(event.getStatus(), event.getUser());
-
-    }
+//    @Subscribe(threadMode = ThreadMode.MAIN)
+//    public void updateUserInfo(LoginEvent event) {
+//        if (event.getUser() != null) {
+//            //更新绑定UI
+//            if (event.getStatus() && event.getUser().getType().equals(Constants.NETEASE)) {
+//                mNavigationView.getMenu().findItem(R.id.nav_bind_wy).setTitle("已绑定网易云音乐(" + event.getUser().getName() + ")");
+//                if (event.getUser().getAvatar().length() > 0) {
+//                    CoverLoader.INSTANCE.loadDrawable(this, event.getUser().getAvatar(), drawable -> {
+//                        mNavigationView.getMenu().findItem(R.id.nav_bind_wy).setIcon(drawable);
+//                        return null;
+//                    });
+//                }
+//                return;
+//            }
+//        }
+//        //更新用户头像
+//        setUserStatusInfo(event.getStatus(), event.getUser());
+//
+//    }
 
     /**
      * 更新在线用户数量
      *
      * @param event
      */
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void updateOnlineInfo(SocketOnlineEvent event) {
-        if (mOnlineNumTv != null) {
-            mOnlineNumTv.setText(String.valueOf(event.getNum()));
-        }
-    }
+//    @Subscribe(threadMode = ThreadMode.MAIN)
+//    public void updateOnlineInfo(SocketOnlineEvent event) {
+//        if (mOnlineNumTv != null) {
+//            mOnlineNumTv.setText(String.valueOf(event.getNum()));
+//        }
+//    }
 
     /**
      * 检查QQ登录状态
      */
-    private void checkLoginStatus() {
-        if (UserStatus.getLoginStatus() && !UserStatus.getTokenStatus()) {
-            updateLoginToken();
-        } else if (UserStatus.getLoginStatus()) {
-            updateUserInfo(new LoginEvent(true, UserStatus.getUserInfo()));
-        }
-        checkBindNeteaseStatus(true, null);
-    }
+//    private void checkLoginStatus() {
+//        if (UserStatus.getLoginStatus() && !UserStatus.getTokenStatus()) {
+//            updateLoginToken();
+//        } else if (UserStatus.getLoginStatus()) {
+//            updateUserInfo(new LoginEvent(true, UserStatus.getUserInfo()));
+//        }
+//        checkBindNeteaseStatus(true, null);
+//    }
 
     /**
      * 去掉navigationView的滚动条
@@ -470,9 +457,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
      * 初始化倒计时
      */
     private void initCountDownView() {
-        View numItem = mNavigationView.getMenu().findItem(R.id.nav_menu_online_num).getActionView();
-        mOnlineNumTv = numItem.findViewById(R.id.msg_num_tv);
-        mOnlineNumTv.setText("0");
+//        View numItem = mNavigationView.getMenu().findItem(R.id.nav_menu_online_num).getActionView();
+//        mOnlineNumTv = numItem.findViewById(R.id.msg_num_tv);
+//        mOnlineNumTv.setText("0");
         View item = mNavigationView.getMenu().findItem(R.id.nav_menu_count_down).getActionView();
         mSwitchCountDown = item.findViewById(R.id.count_down_switch);
         mSwitchCountDownTv = item.findViewById(R.id.count_down_tv);

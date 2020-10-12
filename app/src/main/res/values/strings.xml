@@ -287,12 +287,11 @@
     <string name="res_xiami">虾米</string>
     <string name="res_local">本地</string>
 
-    <string name="equalizer">均衡器</string>
     <string name="artist_tips">歌手 - 专辑</string>
     <string name="song">歌曲</string>
     <string name="lyric_default_hint">暂无歌词</string>
     <string name="add_to_playlist">增加到歌单</string>
-    <string name="share_content">\"我正在使用 MusicLake 听音乐，我觉得很不错哦，推荐给你用一下，下载链接：https://github.com/caiyonglong/MusicLake/releases\"</string>
+    <string name="share_content">\"我正在使用 MusicPlayer 听音乐，我觉得很不错哦，推荐给你用一下"</string>
     <string name="share_song_content">\n\n我分享的歌曲是 %1$s 的 %2$s"</string>
     <string name="share_local_song">我正在听 %1$s的%2$s，喜欢的可以搜索一下哦!</string>
     <string name="feedback_content">==============\n Android 版本号: %1$s \n\n 手机型号： %2$s %3$s \n\n软件版本号： %4$s\n==============\n\n反馈问题（如果有异常问题，麻烦描述一下复现情景哦，Thanks!）：\n "</string>
@@ -355,7 +354,7 @@
     <string name="dd">暂无歌词</string>
     <string name="recently_update">最近更新：%1$s</string>
     <string name="float_settings">请在设置中，打开悬浮窗设置</string>
-    <string name="about_card1_message">嗨! 欢迎使用音乐湖！</string>
+    <string name="about_card1_message">嗨! 欢迎使用音乐播放器！</string>
     <string name="about_title">如果你喜欢这个应用，给个Star吧!</string>
     <string name="about_git_hub">源代码(GitHub)</string>
     <string name="about_pc">PC端</string>
@@ -516,4 +515,21 @@
     <string name="clear_history_playlist_tips">是否清空播放历史？</string>
     <string name="choose_singer">选择歌手</string>
     <string name="youtube_loading">加载YouTube数据中(VPN前提)</string>
+
+
+    <string name="title_equalizer">均衡器</string>
+    <string name="equalizer">均衡器</string>
+    <string name="euqalizer_bass">低音增强</string>
+    <string name="euqalizer_3d">3D环绕</string>
+    <string name="euqalizer_custom">自定义</string>
+    <string name="euqalizer_normal">Normal</string>
+    <string name="euqalizer_classical">Classical</string>
+    <string name="euqalizer_dance">Dance</string>
+    <string name="euqalizer_flat">Flat</string>
+    <string name="euqalizer_folk">Folk</string>
+    <string name="euqalizer_heavy_metal">Heavy Metal</string>
+    <string name="euqalizer_hip_hop">Hip Hop</string>
+    <string name="euqalizer_jazz">Jazz</string>
+    <string name="euqalizer_pop">Pop</string>
+    <string name="euqalizer_rock">Rock</string>
 </resources>

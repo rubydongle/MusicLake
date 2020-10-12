@@ -6,16 +6,16 @@
 
         <item android:title="@string/menu_feature">
             <menu>
-                <item
-                    android:id="@+id/nav_login_status"
-                    android:icon="@drawable/ic_exit"
-                    android:iconTint="@color/iconColor"
-                    android:title="@string/login" />
-                <item
-                    android:id="@+id/nav_bind_wy"
-                    android:icon="@drawable/netease"
-                    android:iconTint="@color/iconColor"
-                    android:title="@string/bind_netease" />
+<!--                <item-->
+<!--                    android:id="@+id/nav_login_status"-->
+<!--                    android:icon="@drawable/ic_exit"-->
+<!--                    android:iconTint="@color/iconColor"-->
+<!--                    android:title="@string/login" />-->
+<!--                <item-->
+<!--                    android:id="@+id/nav_bind_wy"-->
+<!--                    android:icon="@drawable/netease"-->
+<!--                    android:iconTint="@color/iconColor"-->
+<!--                    android:title="@string/bind_netease" />-->
                 <item
                     android:id="@+id/nav_menu_playQueue"
                     android:icon="@drawable/ic_playlist_play"
@@ -26,17 +26,17 @@
                     android:icon="@drawable/ic_equalizer_black"
                     android:iconTint="@color/iconColor"
                     android:title="@string/equalizer" />
-                <item
-                    android:id="@+id/nav_menu_import"
-                    android:icon="@drawable/ic_import_playlist"
-                    android:iconTint="@color/iconColor"
-                    android:title="@string/import_playlist" />
-                <item
-                    android:id="@+id/nav_menu_online_num"
-                    android:icon="@drawable/ic_supervisor_account"
-                    android:iconTint="@color/iconColor"
-                    android:title="@string/real_time_user"
-                    app:actionLayout="@layout/item_red_spot" />
+<!--                <item-->
+<!--                    android:id="@+id/nav_menu_import"-->
+<!--                    android:icon="@drawable/ic_import_playlist"-->
+<!--                    android:iconTint="@color/iconColor"-->
+<!--                    android:title="@string/import_playlist" />-->
+<!--                <item-->
+<!--                    android:id="@+id/nav_menu_online_num"-->
+<!--                    android:icon="@drawable/ic_supervisor_account"-->
+<!--                    android:iconTint="@color/iconColor"-->
+<!--                    android:title="@string/real_time_user"-->
+<!--                    app:actionLayout="@layout/item_red_spot" />-->
 
                 <item
                     android:id="@+id/nav_menu_count_down"
@@ -57,11 +57,16 @@
 
     <item android:title="@string/menu_other">
         <menu>
+<!--            <item-->
+<!--                android:id="@+id/nav_menu_test"-->
+<!--                android:icon="@drawable/ic_about"-->
+<!--                android:iconTint="@color/iconColor"-->
+<!--                android:title="@string/title_test" />-->
             <item
-                android:id="@+id/nav_menu_test"
-                android:icon="@drawable/ic_about"
+                android:id="@+id/nav_menu_setting"
+                android:icon="@drawable/ic_settings"
                 android:iconTint="@color/iconColor"
-                android:title="@string/title_test" />
+                android:title="@string/settings" />
             <item
                 android:id="@+id/nav_menu_about"
                 android:icon="@drawable/ic_about"
@@ -72,16 +77,11 @@
                 android:icon="@drawable/ic_feedback"
                 android:iconTint="@color/iconColor"
                 android:title="@string/about_feedback" />
-            <item
-                android:id="@+id/nav_menu_setting"
-                android:icon="@drawable/ic_settings"
-                android:iconTint="@color/iconColor"
-                android:title="@string/settings" />
-            <item
-                android:id="@+id/nav_menu_exit"
-                android:icon="@drawable/ic_exit"
-                android:iconTint="@color/iconColor"
-                android:title="@string/exit" />
+<!--            <item-->
+<!--                android:id="@+id/nav_menu_exit"-->
+<!--                android:icon="@drawable/ic_exit"-->
+<!--                android:iconTint="@color/iconColor"-->
+<!--                android:title="@string/exit" />-->
         </menu>
     </item>
 

@@ -164,6 +164,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name="com.midas.music.ui.equalizer.EqualizerActivity"
+            android:label="@string/title_equalizer"
+            android:parentActivityName="com.midas.music.ui.main.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.midas.music.ui.settings.AboutActivity"
             android:label="@string/title_about"
             android:parentActivityName="com.midas.music.ui.settings.SettingsActivity"

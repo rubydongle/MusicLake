@@ -10,7 +10,7 @@ public class LogUtil {
      * 默认的tag
      */
     private static final boolean IS_DEBUG = true;
-    public static final String defaultTag = "MusicLake";
+    public static final String defaultTag = "MidasMusicPlayer";
     public static final int VERBOSE = 1;
     public static final int DEBUG = 2;
     public static final int INFO = 3;
