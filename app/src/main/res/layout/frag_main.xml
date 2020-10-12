@@ -32,7 +32,7 @@
             android:theme="?android:tabWidgetStyle"
             app:tabGravity="fill"
             app:tabIndicatorFullWidth="false"
-            app:tabMode="fixed" />
+            app:tabMode="scrollable" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager

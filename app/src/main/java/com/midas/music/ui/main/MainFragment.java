@@ -9,12 +9,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.midas.music.R;
 import com.midas.music.ui.base.BaseFragment;
-import com.midas.music.ui.music.charts.fragment.ChartsDetailFragment;
-import com.midas.music.ui.music.discover.DiscoverFragment;
+import com.midas.music.ui.music.local.fragment.AlbumFragment;
+import com.midas.music.ui.music.local.fragment.ArtistFragment;
 import com.midas.music.ui.music.local.fragment.FoldersFragment;
-import com.midas.music.ui.music.my.MyMusicFragment;
-import com.midas.music.ui.music.video.VideoSquareFragment;
+import com.midas.music.ui.music.local.fragment.SongsFragment;
+import com.midas.music.ui.music.local.fragment.LocalPlaylistFragment;
 import com.google.android.material.tabs.TabLayout;
+import com.midas.music.ui.music.my.MyMusicFragment;
 
 import butterknife.BindView;
 
@@ -98,10 +99,14 @@ public class MainFragment extends BaseFragment {
 
     private void setupViewPager(ViewPager mViewPager) {
         PageAdapter mAdapter = new PageAdapter(getChildFragmentManager());
-        mAdapter.addFragment(MyMusicFragment.Companion.newInstance(), getContext().getString(R.string.my));
-        mAdapter.addFragment(DiscoverFragment.Companion.newInstance(), getContext().getString(R.string.discover));
-        mAdapter.addFragment(ChartsDetailFragment.Companion.newInstance(), getContext().getString(R.string.charts));
-        mAdapter.addFragment(VideoSquareFragment.Companion.newInstance(), getContext().getString(R.string.video_title));
+        mAdapter.addFragment(SongsFragment.Companion.newInstance(), getContext().getString(R.string.local_title));
+        mAdapter.addFragment(AlbumFragment.Companion.newInstance(), getContext().getString(R.string.album_title));
+        mAdapter.addFragment(ArtistFragment.Companion.newInstance(), getContext().getString(R.string.artist_title));
+        mAdapter.addFragment(LocalPlaylistFragment.Companion.newInstance(), getContext().getString(R.string.playlist_title));
+//        mAdapter.addFragment(MyMusicFragment.Companion.newInstance(), getContext().getString(R.string.my));
+//        mAdapter.addFragment(DiscoverFragment.Companion.newInstance(), getContext().getString(R.string.discover));
+//        mAdapter.addFragment(ChartsDetailFragment.Companion.newInstance(), getContext().getString(R.string.charts));
+//        mAdapter.addFragment(VideoSquareFragment.Companion.newInstance(), getContext().getString(R.string.video_title));
         mAdapter.addFragment(FoldersFragment.Companion.newInstance(), getString(R.string.folder_title));
         mViewPager.setAdapter(mAdapter);
     }

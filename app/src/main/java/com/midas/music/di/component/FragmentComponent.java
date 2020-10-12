@@ -14,6 +14,7 @@ import com.midas.music.ui.music.local.fragment.AlbumDetailFragment;
 import com.midas.music.ui.music.local.fragment.AlbumFragment;
 import com.midas.music.ui.music.local.fragment.ArtistFragment;
 import com.midas.music.ui.music.artist.fragment.ArtistSongsFragment;
+import com.midas.music.ui.music.local.fragment.LocalPlaylistFragment;
 import com.midas.music.ui.music.local.fragment.LocalVideoFragment;
 import com.midas.music.ui.music.local.fragment.FoldersFragment;
 import com.midas.music.ui.music.mv.MvListFragment;
@@ -72,6 +73,8 @@ public interface FragmentComponent {
     void inject(PlayControlFragment playControlFragment);
 
     void inject(MyMusicFragment myMusicFragment);
+
+    void inject(LocalPlaylistFragment playlistFragment);
 
     void inject(LoveFragment loveFragment);
 
