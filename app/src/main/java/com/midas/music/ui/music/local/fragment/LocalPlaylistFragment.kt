@@ -137,15 +137,15 @@ class LocalPlaylistFragment : BaseFragment<LocalPresenter>(), LocalPlaylistContr
     override fun onResume() {
         super.onResume()
         //是否显示
-        if (SPUtils.getAnyByKey(SPUtils.SP_KEY_NOTICE_CODE, 0) == 0) {
-            //显示通知
-            val noticeInfo = NoticeInfo()
-            noticeInfo.id = 10
-            noticeInfo.dismiss = true
-            noticeInfo.message = "因为网易云API是使用免费的云引擎搭建的服务器，所以请求会有些限制，云服务每天最多运行18个小时。所以有时候网易云音乐的API会请求异常，也可以自己部署本地的网易云音乐api服务"
-            noticeInfo.title = "提示"
-            showNoticeInfo(noticeInfo)
-        }
+//        if (SPUtils.getAnyByKey(SPUtils.SP_KEY_NOTICE_CODE, 0) == 0) {
+//            //显示通知
+//            val noticeInfo = NoticeInfo()
+//            noticeInfo.id = 10
+//            noticeInfo.dismiss = true
+//            noticeInfo.message = "因为网易云API是使用免费的云引擎搭建的服务器，所以请求会有些限制，云服务每天最多运行18个小时。所以有时候网易云音乐的API会请求异常，也可以自己部署本地的网易云音乐api服务"
+//            noticeInfo.title = "提示"
+//            showNoticeInfo(noticeInfo)
+//        }
     }
 
     /**
@@ -153,7 +153,7 @@ class LocalPlaylistFragment : BaseFragment<LocalPresenter>(), LocalPlaylistContr
      */
     override fun loadData() {
         mPresenter?.loadSongs()
-        mPresenter?.loadPlaylist()
+//        mPresenter?.loadPlaylist()
         mPresenter?.loadLocalPlaylist()
 //        mPresenter?.updateLocalVideo()
     }
@@ -180,20 +180,20 @@ class LocalPlaylistFragment : BaseFragment<LocalPresenter>(), LocalPlaylistContr
                 playlistAddIv.visibility = View.VISIBLE
                 playlistManagerIv.visibility = View.VISIBLE
             }
-            Constants.PLAYLIST_CUSTOM_ID -> {
-                mAdapter?.setNewData(playlists)
-                playlistAddIv.visibility = View.VISIBLE
-                playlistManagerIv.visibility = View.VISIBLE
-            }
-            Constants.PLAYLIST_WY_ID -> {
-                if (wyPlaylists.size == 0) {
-                    //加载网易云音乐歌单
-                    mPresenter?.loadWyUserPlaylist()
-                }
-                mAdapter?.setNewData(wyPlaylists)
-                playlistAddIv.visibility = View.INVISIBLE
-                playlistManagerIv.visibility = View.INVISIBLE
-            }
+//            Constants.PLAYLIST_CUSTOM_ID -> {
+//                mAdapter?.setNewData(playlists)
+//                playlistAddIv.visibility = View.VISIBLE
+//                playlistManagerIv.visibility = View.VISIBLE
+//            }
+//            Constants.PLAYLIST_WY_ID -> {
+//                if (wyPlaylists.size == 0) {
+//                    //加载网易云音乐歌单
+//                    mPresenter?.loadWyUserPlaylist()
+//                }
+//                mAdapter?.setNewData(wyPlaylists)
+//                playlistAddIv.visibility = View.INVISIBLE
+//                playlistManagerIv.visibility = View.INVISIBLE
+//            }
         }
         //如果歌单列表为空则显示空提示
         if (mAdapter?.data?.size == 0) {

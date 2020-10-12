@@ -77,7 +77,7 @@ class MusicExoPlayer(var context: Context) : BasePlayer(), Player.EventListener 
         //生成数据原实力
         mediaDataSourceFactory = DefaultDataSourceFactory(
                 context,
-                Util.getUserAgent(context, "MusicLakeApp")
+                Util.getUserAgent(context, "MusioPlayer")
         )
         //创建 player
         loadControl = DefaultLoadControl()

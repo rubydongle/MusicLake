@@ -5,7 +5,7 @@
 //import android.view.ViewGroup
 //import androidx.recyclerview.widget.RecyclerView
 //import com.bumptech.glide.Glide
-//import com.cyl.musiclake.R
+//import com.cyl.musioplayer.R
 //
 //class FrontPhotosAdapter : RecyclerView.Adapter<YouTubeDemoViewHolder>() {
 //

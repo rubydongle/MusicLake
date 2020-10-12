@@ -21,7 +21,7 @@
     <string name="logout_hint">退出登录/关闭</string>
     <string name="action_settings">设置</string>
     <string name="header_author_url">个性标签</string>
-    <string name="widget_standard">音乐湖</string>
+    <string name="widget_standard">音乐播放器</string>
     <string name="warning_add_playlist">暂不支持添加本地音乐和百度音乐</string>
     <string name="add_un_support_local">暂不支持添加本地歌曲到在线歌单</string>
     <string name="warning_network">暂不支持添加本地音乐和百度音乐</string>
@@ -228,7 +228,7 @@
     <string name="count_down_time">定时关闭播放</string>
 
     <!--about-->
-    <string name="title_about">关于音乐湖</string>
+    <string name="title_about">关于音乐播放器</string>
     <string name="version">版本号</string>
     <string name="author">作者</string>
     <string name="about_des">描述</string>
@@ -236,7 +236,7 @@
     <string name="about_project">项目地址</string>
     <string name="about_feedback">邮件反馈</string>
     <string name="about_software"><u>关于软件</u></string>
-    <string name="about_project_url">https://github.com/caiyonglong/MusicLake</string>
+    <string name="about_project_url"></string>
     <string name="share_title">分享</string>
     <string name="browser_title">使用系统浏览器打开</string>
     <string name="share_article_url"><![CDATA[<string name=\"share_article_url\">%1$s分享【%2$s】：%3$s</string>]]></string>
@@ -291,7 +291,7 @@
     <string name="song">歌曲</string>
     <string name="lyric_default_hint">暂无歌词</string>
     <string name="add_to_playlist">增加到歌单</string>
-    <string name="share_content">\"我正在使用 MusicPlayer 听音乐，我觉得很不错哦，推荐给你用一下"</string>
+    <string name="share_content">\"我正在使用 MusioPlayer 听音乐，我觉得很不错哦，推荐给你用一下"</string>
     <string name="share_song_content">\n\n我分享的歌曲是 %1$s 的 %2$s"</string>
     <string name="share_local_song">我正在听 %1$s的%2$s，喜欢的可以搜索一下哦!</string>
     <string name="feedback_content">==============\n Android 版本号: %1$s \n\n 手机型号： %2$s %3$s \n\n软件版本号： %4$s\n==============\n\n反馈问题（如果有异常问题，麻烦描述一下复现情景哦，Thanks!）：\n "</string>
@@ -354,7 +354,7 @@
     <string name="dd">暂无歌词</string>
     <string name="recently_update">最近更新：%1$s</string>
     <string name="float_settings">请在设置中，打开悬浮窗设置</string>
-    <string name="about_card1_message">嗨! 欢迎使用音乐播放器！</string>
+    <string name="about_card1_message">嗨! 欢迎使用Musio Player！</string>
     <string name="about_title">如果你喜欢这个应用，给个Star吧!</string>
     <string name="about_git_hub">源代码(GitHub)</string>
     <string name="about_pc">PC端</string>
@@ -426,7 +426,7 @@
     <string name="weibosdk_demo_toast_auth_canceled">登录已取消</string>
     <string name="user_join">下线</string>
     <string name="user_leave">上线</string>
-    <string name="chat_gg">有什么问题不能及时反馈？请点击链接加入群聊【音乐湖交流群】：https://jq.qq.com/?_wv=1027&amp;k=5oF9xQv</string>
+    <string name="chat_gg">有什么问题不能及时反馈？请点击链接加入群聊</string>
     <string name="search_filter_title">在线音乐搜索方式</string>
     <string name="search_filter_summary">过滤不同平台的音乐源</string>
     <string name="search_filter_qq">qq音乐</string>
@@ -476,7 +476,7 @@
     <string name="artists">艺术家</string>
     <string name="recommend">推荐</string>
     <string name="pref_title_netease">网易云音乐API</string>
-    <string name="pref_title_music_api">音乐湖后台API</string>
+    <string name="pref_title_music_api">音乐播放器后台API</string>
     <string name="settings_restart_app">重启App后生效</string>
     <string name="recommend_song">推荐歌曲</string>
     <string name="playlist_square">歌单广场</string>
@@ -510,7 +510,7 @@
 
     <string name="action_share">Share</string>
     <string name="action_reply">Reply</string>
-    <string name="copyright_info">Copyright© 2020 MusicLake Group</string>
+    <string name="copyright_info">Copyright© 2020 Midas Entertainment</string>
     <string name="delete_playlist_tips">是否删除这个歌单？</string>
     <string name="clear_history_playlist_tips">是否清空播放历史？</string>
     <string name="choose_singer">选择歌手</string>

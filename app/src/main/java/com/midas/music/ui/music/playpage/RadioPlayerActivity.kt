@@ -9,8 +9,8 @@
 //import android.view.animation.TranslateAnimation
 //import android.widget.ImageView
 //import android.widget.SeekBar
-//import com.cyl.musiclake.BuildConfig
-//import com.cyl.musiclake.R
+//import com.cyl.musioplayer.BuildConfig
+//import com.cyl.musioplayer.R
 //import com.midas.music.bean.Music
 //import com.midas.music.common.Extras
 //import com.midas.music.common.TransitionAnimationUtils

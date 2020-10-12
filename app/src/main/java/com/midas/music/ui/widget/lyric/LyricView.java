@@ -30,7 +30,7 @@
 //import android.view.animation.DecelerateInterpolator;
 //import android.view.animation.OvershootInterpolator;
 //
-//import com.cyl.musiclake.R;
+//import com.cyl.musioplayer.R;
 //
 //import java.io.File;
 //import java.text.DecimalFormat;

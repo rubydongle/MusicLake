@@ -16,7 +16,7 @@
 //import android.view.MotionEvent;
 //import android.view.View;
 //
-//import com.cyl.musiclake.R;
+//import com.cyl.musioplayer.R;
 //import com.midas.music.utils.LogUtil;
 //
 //import java.util.ArrayList;

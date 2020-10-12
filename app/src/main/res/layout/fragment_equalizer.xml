@@ -1,20 +1,21 @@
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<androidx.core.widget.NestedScrollView -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
-    android:orientation="vertical"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:orientation="vertical" >
+<!--    app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
-        android:background="#000000"
-        android:orientation="vertical" >
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        android:background="#000000"-->
+<!--        android:orientation="vertical" >-->
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/equalizer_switch"
@@ -23,55 +24,66 @@
             android:layout_marginTop="?android:attr/actionBarSize"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:background="@color/yellow"
             android:layout_marginEnd="10dp" />
 
-        <com.db.chart.view.LineChartView
-            android:id="@+id/lineChart"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_weight="3"
-            android:background="@drawable/graph_back_2"
-            android:paddingBottom="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp" />
-
-        <RelativeLayout
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:layout_marginRight="9dp"
-            android:layout_weight="1"
-            android:background="#33000000">
+            android:scrollbars="none" >
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleLine="true"
+                app:singleSelection="true">
+<!--                <com.google.android.material.chip.Chip-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:checkable="true"-->
+<!--                    android:text="@string/euqalizer_custom" />-->
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
 
-<!--                android:layout_width=""-->
-<!--                android:layout_height=""-->
+<!--        <com.db.chart.view.LineChartView-->
+<!--            android:id="@+id/lineChart"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:layout_weight="3"-->
+<!--            android:background="@drawable/graph_back_2"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:paddingLeft="15dp"-->
+<!--            android:paddingRight="15dp" />-->
 
-            <View
-                android:id="@+id/showcase_view_equalizer"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="20dp" />
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="9dp"-->
+<!--            android:layout_marginRight="9dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="#33000000">-->
 
-<!--            <Spinner-->
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/equalizer_preset_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-<!--                android:layout_marginStart="5dp"-->
-<!--                android:background="@android:color/transparent" />-->
+<!--            <View-->
+<!--                android:id="@+id/showcase_view_equalizer"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_marginStart="20dp" />-->
 
-            <ImageView
-                android:id="@+id/spinner_dropdown_icon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="10dp"
-                android:src="@drawable/dropdown_icon"
-                app:tint="#FFFFFF" />
-        </RelativeLayout>
+<!--            <androidx.appcompat.widget.AppCompatSpinner-->
+<!--                android:id="@+id/equalizer_preset_spinner"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/spinner_dropdown_icon"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:src="@drawable/dropdown_icon"-->
+<!--                app:tint="#FFFFFF" />-->
+<!--        </RelativeLayout>-->
 
         <LinearLayout
             android:id="@+id/equalizerContainer"
@@ -230,7 +242,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_200"
+            android:layout_height="100dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="3"
             android:background="@android:color/transparent"
@@ -252,12 +264,13 @@
         <FrameLayout
             android:id="@+id/equalizerBlocker"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_120"
+            android:layout_height="@dimen/dp_20"
             android:layout_below="@+id/equalizer_action_container"
             android:alpha="0.7"
             android:background="@android:color/transparent"
             android:clickable="true"
             android:visibility="invisible" />
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>
+<!--</androidx.core.widget.NestedScrollView>-->

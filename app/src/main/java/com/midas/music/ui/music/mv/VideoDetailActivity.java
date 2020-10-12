@@ -19,7 +19,7 @@
 //import com.cyl.musicapi.netease.CommentsItemInfo;
 //import com.cyl.musicapi.netease.MvInfoDetail;
 //import com.cyl.musicapi.netease.MvInfoDetailInfo;
-//import com.cyl.musiclake.R;
+//import com.cyl.musioplayer.R;
 //import com.midas.music.bean.Artist;
 //import com.midas.music.bean.MvInfoBean;
 //import com.midas.music.common.Constants;

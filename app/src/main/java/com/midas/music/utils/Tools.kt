@@ -25,7 +25,7 @@ object Tools {
 
     fun feeback(context: Context?) {
         val intent = Intent(Intent.ACTION_SENDTO)
-        intent.data = Uri.parse("mailto:caiyonglong@live.com")
+        intent.data = Uri.parse("mailto:ruby.dongle@gmail.com")
         intent.putExtra(Intent.EXTRA_SUBJECT, "用户反馈")
         val content = context?.resources?.getString(R.string.feedback_content, android.os.Build.VERSION.RELEASE, android.os.Build.BRAND, android.os.Build.MODEL, "${BuildConfig.VERSION_CODE}-v${BuildConfig.VERSION_NAME}")
         intent.putExtra(Intent.EXTRA_TEXT, content)

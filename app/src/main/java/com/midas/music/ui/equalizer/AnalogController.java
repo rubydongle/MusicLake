@@ -49,7 +49,7 @@ public class AnalogController extends View {
 
     void init() {
         textPaint = new Paint();
-        textPaint.setColor(Color.WHITE);
+//        textPaint.setColor(Color.WHITE);
         textPaint.setStyle(Paint.Style.FILL);
         textPaint.setTextSize(33);
         textPaint.setFakeBoldText(true);

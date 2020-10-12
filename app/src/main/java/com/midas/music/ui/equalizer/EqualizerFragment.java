@@ -1,6 +1,5 @@
 package com.midas.music.ui.equalizer;
 
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
@@ -13,60 +12,37 @@ import android.media.audiofx.PresetReverb;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
-import androidx.fragment.app.Fragment;
 
-import com.db.chart.model.LineSet;
-import com.db.chart.view.AxisController;
-import com.db.chart.view.ChartView;
-import com.db.chart.view.LineChartView;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import com.midas.music.R;
 import com.midas.music.ui.base.BaseFragment;
-
-import java.util.ArrayList;
 
 public class EqualizerFragment extends BaseFragment {
 
     public static final String ARG_AUDIO_SESSIOIN_ID = "audio_session_id";
 
     SwitchCompat equalizerSwitch;
-
-    LineSet dataset;
-    LineChartView chart;
-    Paint paint;
     float[] points;
-
     int y = 0;
-
-    ImageView spinnerDropDownIcon;
-
     short numberOfFrequencyBands;
     LinearLayout mLinearLayout;
-
     SeekBar[] seekBarFinal = new SeekBar[5];
-
     AnalogController bassController, reverbController;
-
-    Spinner presetSpinner;
-
-    FrameLayout equalizerBlocker;
-
-
+//    FrameLayout equalizerBlocker;
     Context ctx;
+    ChipGroup chipGroup;
 
     public EqualizerFragment() {
         // Required empty public constructor
@@ -76,12 +52,10 @@ public class EqualizerFragment extends BaseFragment {
     public BassBoost bassBoost;
     public PresetReverb presetReverb;
     private int audioSesionId;
-
     static int themeColor = Color.parseColor("#B24242");
     static boolean showBackButton = false;
 
     public static EqualizerFragment newInstance(int audioSessionId) {
-
         Bundle args = new Bundle();
         args.putInt(ARG_AUDIO_SESSIOIN_ID, audioSessionId);
 
@@ -142,12 +116,6 @@ public class EqualizerFragment extends BaseFragment {
         ctx = context;
     }
 
-//    @Override
-//    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        return inflater.inflate(R.layout.fragment_equalizer, container, false);
-//    }
-
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -166,28 +134,14 @@ public class EqualizerFragment extends BaseFragment {
             }
         });
 
-        spinnerDropDownIcon = view.findViewById(R.id.spinner_dropdown_icon);
-        spinnerDropDownIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                presetSpinner.performClick();
-            }
-        });
-
-        presetSpinner = view.findViewById(R.id.equalizer_preset_spinner);
-
-        equalizerBlocker = view.findViewById(R.id.equalizerBlocker);
-
-
-        chart = view.findViewById(R.id.lineChart);
-        paint = new Paint();
-        dataset = new LineSet();
+        chipGroup = view.findViewById(R.id.chip_group);
+//        equalizerBlocker = view.findViewById(R.id.equalizerBlocker);
 
         bassController = view.findViewById(R.id.controllerBass);
         reverbController = view.findViewById(R.id.controller3D);
 
-        bassController.setLabel(R.string.euqalizer_bass);//getResources().getString(R.string.euqalizer_bass));//"BASS");
-        reverbController.setLabel(R.string.euqalizer_3d);//"3D");
+        bassController.setLabel(R.string.euqalizer_bass);
+        reverbController.setLabel(R.string.euqalizer_3d);
 
         bassController.circlePaint2.setColor(themeColor);
         bassController.linePaint.setColor(themeColor);
@@ -290,7 +244,7 @@ public class EqualizerFragment extends BaseFragment {
 //                    ViewGroup.LayoutParams.WRAP_CONTENT
 //            ));
             frequencyHeaderTextView.setGravity(Gravity.CENTER_HORIZONTAL);
-            frequencyHeaderTextView.setTextColor(Color.parseColor("#FFFFFF"));
+//            frequencyHeaderTextView.setTextColor(Color.parseColor("#FFFFFF"));
             frequencyHeaderTextView.setText((mEqualizer.getCenterFreq(equalizerBandIndex) / 1000) + "Hz");
 
             LinearLayout seekBarRowLayout = new LinearLayout(getContext());
@@ -301,7 +255,7 @@ public class EqualizerFragment extends BaseFragment {
 //                    ViewGroup.LayoutParams.WRAP_CONTENT,
 //                    ViewGroup.LayoutParams.MATCH_PARENT
 //            ));
-            lowerEqualizerBandLevelTextView.setTextColor(Color.parseColor("#FFFFFF"));
+//            lowerEqualizerBandLevelTextView.setTextColor(Color.parseColor("#FFFFFF"));
             lowerEqualizerBandLevelTextView.setText((lowerEqualizerBandLevel / 100) + "dB");
 
             TextView upperEqualizerBandLevelTextView = new TextView(getContext());
@@ -309,7 +263,7 @@ public class EqualizerFragment extends BaseFragment {
 //                    ViewGroup.LayoutParams.WRAP_CONTENT,
 //                    ViewGroup.LayoutParams.WRAP_CONTENT
 //            ));
-            upperEqualizerBandLevelTextView.setTextColor(Color.parseColor("#FFFFFF"));
+//            upperEqualizerBandLevelTextView.setTextColor(Color.parseColor("#FFFFFF"));
             upperEqualizerBandLevelTextView.setText((upperEqualizerBandLevel / 100) + "dB");
 
 //            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -350,16 +304,15 @@ public class EqualizerFragment extends BaseFragment {
             seekBar.setMax(upperEqualizerBandLevel - lowerEqualizerBandLevel);
 
             textView.setText(frequencyHeaderTextView.getText());
-            textView.setTextColor(Color.WHITE);
+//            textView.setTextColor(Color.WHITE);
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 
             if (Settings.isEqualizerReloaded) {
                 points[i] = Settings.seekbarpos[i] - lowerEqualizerBandLevel;
-                dataset.addPoint(frequencyHeaderTextView.getText().toString(), points[i]);
+//                dataset.addPoint(frequencyHeaderTextView.getText().toString(), points[i]);
                 seekBar.setProgress(Settings.seekbarpos[i] - lowerEqualizerBandLevel);
             } else {
                 points[i] = mEqualizer.getBandLevel(equalizerBandIndex) - lowerEqualizerBandLevel;
-                dataset.addPoint(frequencyHeaderTextView.getText().toString(), points[i]);
                 seekBar.setProgress(mEqualizer.getBandLevel(equalizerBandIndex) - lowerEqualizerBandLevel);
                 Settings.seekbarpos[i] = mEqualizer.getBandLevel(equalizerBandIndex);
                 Settings.isEqualizerReloaded = true;
@@ -372,13 +325,11 @@ public class EqualizerFragment extends BaseFragment {
                     points[seekBar.getId()] = mEqualizer.getBandLevel(equalizerBandIndex) - lowerEqualizerBandLevel;
                     Settings.seekbarpos[seekBar.getId()] = (progress + lowerEqualizerBandLevel);
                     Settings.equalizerModel.getSeekbarpos()[seekBar.getId()] = (progress + lowerEqualizerBandLevel);
-                    dataset.updateValues(points);
-                    chart.notifyDataUpdate();
                 }
 
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {
-                    presetSpinner.setSelection(0);
+                    ((Chip)chipGroup.getChildAt(0)).setChecked(true);
                     Settings.presetPos = 0;
                     Settings.equalizerModel.setPresetPos(0);
                 }
@@ -392,30 +343,9 @@ public class EqualizerFragment extends BaseFragment {
 
         equalizeSound();
 
-        paint.setColor(Color.parseColor("#555555"));
-        paint.setStrokeWidth((float) (1.10 * Settings.ratio));
-
-        dataset.setColor(themeColor);
-        dataset.setSmooth(true);
-        dataset.setThickness(5);
-
-        chart.setXAxis(false);
-        chart.setYAxis(false);
-
-        chart.setYLabels(AxisController.LabelPosition.NONE);
-        chart.setXLabels(AxisController.LabelPosition.NONE);
-        chart.setGrid(ChartView.GridType.NONE, 7, 10, paint);
-
-        chart.setAxisBorderValues(-300, 3300);
-
-        chart.addData(dataset);
-        chart.show();
-
         Button mEndButton = new Button(getContext());
         mEndButton.setBackgroundColor(themeColor);
-        mEndButton.setTextColor(Color.WHITE);
-
-
+//        mEndButton.setTextColor(Color.WHITE);
     }
 
     public String getStringRes(int resId) {
@@ -423,55 +353,52 @@ public class EqualizerFragment extends BaseFragment {
     }
 
     public void equalizeSound() {
-        ArrayList<String> equalizerPresetNames = new ArrayList<>();
-        ArrayAdapter<String> equalizerPresetSpinnerAdapter = new ArrayAdapter<>(ctx,
-                R.layout.spinner_item,
-                equalizerPresetNames);
-        equalizerPresetSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        equalizerPresetNames.add(getStringRes(R.string.euqalizer_custom));
+        Chip chipCustom = (Chip) getLayoutInflater().inflate(R.layout.equalizer_chip, chipGroup, false);
+        chipCustom.setText(getStringRes(R.string.euqalizer_custom));
+        chipGroup.addView(chipCustom);
 
         for (short i = 0; i < mEqualizer.getNumberOfPresets(); i++) {
-            equalizerPresetNames.add(mEqualizer.getPresetName(i));
+            Chip chip = (Chip) getLayoutInflater().inflate(R.layout.equalizer_chip, chipGroup, false);
+            chip.setText(mEqualizer.getPresetName(i));
+            chipGroup.addView(chip);
         }
 
-        presetSpinner.setAdapter(equalizerPresetSpinnerAdapter);
-        //presetSpinner.setDropDownWidth((Settings.screen_width * 3) / 4);
-        if (Settings.isEqualizerReloaded && Settings.presetPos != 0) {
-//            correctPosition = false;
-            presetSpinner.setSelection(Settings.presetPos);
-        }
+        for(int i = 0; i < chipGroup.getChildCount(); i ++) {
+            Chip chip = (Chip)chipGroup.getChildAt(i);
+            chip.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    chip.setChecked(true);
+                    int position = chipGroup.indexOfChild(chip);
+                    Toast.makeText(getContext(), "clicked:" + position, Toast.LENGTH_SHORT).show();
+                    try {
+                        if (position != 0) {
+                            mEqualizer.usePreset((short) (position - 1));
+                            Settings.presetPos = position;
+                            short numberOfFreqBands = 5;
 
-        presetSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                try {
-                    if (position != 0) {
-                        mEqualizer.usePreset((short) (position - 1));
-                        Settings.presetPos = position;
-                        short numberOfFreqBands = 5;
+                            final short lowerEqualizerBandLevel = mEqualizer.getBandLevelRange()[0];
 
-                        final short lowerEqualizerBandLevel = mEqualizer.getBandLevelRange()[0];
-
-                        for (short i = 0; i < numberOfFreqBands; i++) {
-                            seekBarFinal[i].setProgress(mEqualizer.getBandLevel(i) - lowerEqualizerBandLevel);
-                            points[i] = mEqualizer.getBandLevel(i) - lowerEqualizerBandLevel;
-                            Settings.seekbarpos[i] = mEqualizer.getBandLevel(i);
-                            Settings.equalizerModel.getSeekbarpos()[i] = mEqualizer.getBandLevel(i);
+                            for (short i = 0; i < numberOfFreqBands; i++) {
+                                seekBarFinal[i].setProgress(mEqualizer.getBandLevel(i) - lowerEqualizerBandLevel);
+                                points[i] = mEqualizer.getBandLevel(i) - lowerEqualizerBandLevel;
+                                Settings.seekbarpos[i] = mEqualizer.getBandLevel(i);
+                                Settings.equalizerModel.getSeekbarpos()[i] = mEqualizer.getBandLevel(i);
+                            }
                         }
-                        dataset.updateValues(points);
-                        chart.notifyDataUpdate();
+                    } catch (Exception e) {
+                        Toast.makeText(ctx, "Error while updating Equalizer", Toast.LENGTH_SHORT).show();
                     }
-                } catch (Exception e) {
-                    Toast.makeText(ctx, "Error while updating Equalizer", Toast.LENGTH_SHORT).show();
+                    Settings.equalizerModel.setPresetPos(position);
                 }
-                Settings.equalizerModel.setPresetPos(position);
-            }
+            });
+        }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+        if (Settings.isEqualizerReloaded && Settings.presetPos != 0) {
+            ((Chip)chipGroup.getChildAt(Settings.presetPos)).setChecked(true);
+        } else {
+            ((Chip)chipGroup.getChildAt(0)).setChecked(true);
+        }
     }
 
     @Override

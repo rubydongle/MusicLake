@@ -175,10 +175,10 @@ public class Constants {
     /**
      * 关于的GitHub地址
      */
-    public static final String ABOUT_MUSIC_LAKE = "https://github.com/caiyonglong/MusicLake";
-    public static final String ABOUT_MUSIC_LAKE_ISSUES = "https://github.com/caiyonglong/MusicLake/issues/new";
-    public static final String ABOUT_MUSIC_LAKE_PC = "https://github.com/sunzongzheng/music/releases";
-    public static final String ABOUT_MUSIC_LAKE_URL = "https://github.com/caiyonglong/MusicLake/blob/develop/README.md";
+    public static final String ABOUT_MUSIO_PLAYER = "https://wwww.google.com";//github.com/caiyonglong/MusicLake";
+    public static final String ABOUT_MUSIO_PLAYER_ISSUES = "https://www.google.com";//github.com/caiyonglong/MusicLake/issues/new";
+    public static final String ABOUT_MUSIO_PLAYER_PC = "https://www.google.com";//github.com/sunzongzheng/music/releases";
+    public static final String ABOUT_MUSIO_PLAYER_URL = "https://www.google.com";//github.com/caiyonglong/MusicLake/blob/develop/README.md";
 
 
     /**
@@ -204,7 +204,7 @@ public class Constants {
     public static final String OAUTH_QQ = "oauth_qq";
     public static final String OAUTH_WEIBO = "oauth_weibo";
     public static final String GITHUB_BASE_URL = "https://github.com";
-    public static final String GITHUB_REDIRECT_URI = "musiclake://oauth";
+    public static final String GITHUB_REDIRECT_URI = "musioplayer://oauth";
     public static final String GITHUB_CLIENT_ID = "05baa9742e6a72d662a6";
     public static final String GITHUB_CLIENT_SECRET = "776c29a9eb0822505829483a1dfcd19812ac622f";
     public static final String GOOGLE_DEVELOPER_KEY = "AIzaSyCVdXoMhAPa1UdAyxKUK5Xp-uxWG612OEg";

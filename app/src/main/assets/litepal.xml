@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <litepal>
-    <dbname value="musiclake1" />
-    <version value="11" />
+    <dbname value="musioplayer1" />
+    <version value="1" />
     <list>
         <mapping class="com.midas.music.bean.Music" />
         <mapping class="com.midas.music.bean.Playlist" />

@@ -57,7 +57,7 @@ class AboutActivity : BaseActivity<BasePresenter<BaseContract.BaseView>>() {
      * 打开PC端的GitHub主页
      */
     fun toGithubIssue(view: View) {
-        Tools.openBrowser(this, ABOUT_MUSIC_LAKE_ISSUES)
+        Tools.openBrowser(this, ABOUT_MUSIO_PLAYER_ISSUES)
     }
 
 
@@ -65,14 +65,14 @@ class AboutActivity : BaseActivity<BasePresenter<BaseContract.BaseView>>() {
      * 打开PC端的GitHub主页
      */
     fun toGithubOfPc(view: View) {
-        Tools.openBrowser(this, ABOUT_MUSIC_LAKE_PC)
+        Tools.openBrowser(this, ABOUT_MUSIO_PLAYER_PC)
     }
 
     /**
      * 打开GitHub主页
      */
     fun toGithubPage(view: View) {
-        Tools.openBrowser(this, ABOUT_MUSIC_LAKE_URL)
+        Tools.openBrowser(this, ABOUT_MUSIO_PLAYER_URL)
     }
 
     /**

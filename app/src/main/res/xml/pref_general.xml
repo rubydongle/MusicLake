@@ -16,18 +16,18 @@
             android:title="@string/setting_lyric"
             app:iconSpaceReserved="false" />
 
-        <SwitchPreference
-            android:key="key_socket"
-            android:summary="@string/setting_socket_des"
-            android:title="@string/setting_socket"
-            app:iconSpaceReserved="false" />
+<!--        <SwitchPreference-->
+<!--            android:key="key_socket"-->
+<!--            android:summary="@string/setting_socket_des"-->
+<!--            android:title="@string/setting_socket"-->
+<!--            app:iconSpaceReserved="false" />-->
 
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="wifi_mode"
-            android:summary="@string/pref_title_wifi_summary"
-            android:title="@string/pref_title_wifi"
-            app:iconSpaceReserved="false" />
+<!--        <SwitchPreference-->
+<!--            android:defaultValue="true"-->
+<!--            android:key="wifi_mode"-->
+<!--            android:summary="@string/pref_title_wifi_summary"-->
+<!--            android:title="@string/pref_title_wifi"-->
+<!--            app:iconSpaceReserved="false" />-->
 
         <ListPreference
             android:defaultValue="2"
@@ -39,51 +39,51 @@
 
     </PreferenceCategory>
 
-    <ListPreference
-        android:defaultValue="128"
-        android:entries="@array/pref_quality_select"
-        android:entryValues="@array/pref_quality_select_values"
-        android:key="key_music_quality"
-        android:negativeButtonText="@null"
-        android:positiveButtonText="@null"
-        android:title="@string/pref_title_select_quality"
-        app:iconSpaceReserved="false" />
+<!--    <ListPreference-->
+<!--        android:defaultValue="128"-->
+<!--        android:entries="@array/pref_quality_select"-->
+<!--        android:entryValues="@array/pref_quality_select_values"-->
+<!--        android:key="key_music_quality"-->
+<!--        android:negativeButtonText="@null"-->
+<!--        android:positiveButtonText="@null"-->
+<!--        android:title="@string/pref_title_select_quality"-->
+<!--        app:iconSpaceReserved="false" />-->
 
-    <PreferenceCategory
-        android:title="@string/item_download"
-        app:iconSpaceReserved="false">
-        <Preference
-            android:key="key_download_file"
-            android:title="@string/pref_title_download"
-            app:iconSpaceReserved="false" />
+<!--    <PreferenceCategory-->
+<!--        android:title="@string/item_download"-->
+<!--        app:iconSpaceReserved="false">-->
+<!--        <Preference-->
+<!--            android:key="key_download_file"-->
+<!--            android:title="@string/pref_title_download"-->
+<!--            app:iconSpaceReserved="false" />-->
 
-        <SwitchPreference
-            android:checked="true"
-            android:defaultValue="false"
-            android:key="key_cache_mode"
-            android:summary="@string/pref_summary_cache_switch"
-            android:title="@string/pref_title_cache_switch"
-            app:iconSpaceReserved="false" />
+<!--        <SwitchPreference-->
+<!--            android:checked="true"-->
+<!--            android:defaultValue="false"-->
+<!--            android:key="key_cache_mode"-->
+<!--            android:summary="@string/pref_summary_cache_switch"-->
+<!--            android:title="@string/pref_title_cache_switch"-->
+<!--            app:iconSpaceReserved="false" />-->
 
-        <Preference
-            android:enabled="false"
-            android:key="key_cache_file"
-            android:title="@string/pref_title_cache"
-            app:iconSpaceReserved="false" />
-    </PreferenceCategory>
+<!--        <Preference-->
+<!--            android:enabled="false"-->
+<!--            android:key="key_cache_file"-->
+<!--            android:title="@string/pref_title_cache"-->
+<!--            app:iconSpaceReserved="false" />-->
+<!--    </PreferenceCategory>-->
 
-    <PreferenceCategory
-        android:title="@string/pref_header_notifications"
-        app:iconSpaceReserved="false">
-        <EditTextPreference
-            android:key="key_music_api"
-            android:title="@string/pref_title_music_api"
-            app:iconSpaceReserved="false" />
-        <EditTextPreference
-            android:key="key_netease_api"
-            android:title="@string/pref_title_netease"
-            app:iconSpaceReserved="false" />
-    </PreferenceCategory>
+<!--    <PreferenceCategory-->
+<!--        android:title="@string/pref_header_notifications"-->
+<!--        app:iconSpaceReserved="false">-->
+<!--        <EditTextPreference-->
+<!--            android:key="key_music_api"-->
+<!--            android:title="@string/pref_title_music_api"-->
+<!--            app:iconSpaceReserved="false" />-->
+<!--        <EditTextPreference-->
+<!--            android:key="key_netease_api"-->
+<!--            android:title="@string/pref_title_netease"-->
+<!--            app:iconSpaceReserved="false" />-->
+<!--    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:title="@string/pref_header_data_sync"
