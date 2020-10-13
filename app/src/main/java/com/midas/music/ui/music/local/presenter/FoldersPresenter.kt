@@ -5,6 +5,7 @@ import com.midas.music.bean.FolderInfo
 import com.midas.music.data.AppRepository
 import com.midas.music.data.SongLoader
 import com.midas.music.ui.music.local.contract.FoldersContract
+import com.midas.music.utils.ToastUtils
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -52,6 +53,7 @@ constructor() : BasePresenter<FoldersContract.View>(), FoldersContract.Presenter
                     override fun onError(e: Throwable) {
                         e.printStackTrace()
                         mView.hideLoading()
+                        ToastUtils.show("load folders error")
                         mView.showFolders(mutableListOf())
                     }
 

@@ -22,7 +22,8 @@ object FolderLoader {
         val selection = "duration>60000 AND is_music=1 AND title != '' "
         return Observable.create { subscriber ->
             val cursor = context.contentResolver.query(
-                    MediaStore.Files.getContentUri("external"), projection, selection, null, null)
+                    MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection, null, null)
+//            MediaStore.Files.getContentUri("external"), projection, selection, null, null)
 
             if (cursor != null) {
                 val index_data = cursor.getColumnIndex(MediaStore.Files.FileColumns.DATA)
