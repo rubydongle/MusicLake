@@ -24,12 +24,13 @@ class Album : LitePalSupport, Serializable, Comparable<Album> {
 
     constructor() {}
 
-    constructor(id: String, name: String, artistName: String, artistId: Long, count: Int) {
+    constructor(id: String, name: String, artistName: String, artistId: Long, count: Int, coverUri: String) {
         this.name = name
         this.albumId = id
         this.artistName = artistName
         this.artistId = artistId.toString()
         this.count = count
+        this.cover = coverUri
     }
 
     override fun toString(): String {

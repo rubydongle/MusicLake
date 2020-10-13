@@ -6,8 +6,8 @@ import android.content.Context;
 import com.midas.music.di.module.ActivityModule;
 import com.midas.music.di.scope.ContextLife;
 import com.midas.music.di.scope.PerActivity;
-import com.midas.music.ui.chat.ChatActivity;
-import com.midas.music.ui.chat.ChatDetailActivity;
+//import com.midas.music.ui.chat.ChatActivity;
+//import com.midas.music.ui.chat.ChatDetailActivity;
 import com.midas.music.ui.music.artist.activity.ArtistDetailActivity;
 import com.midas.music.ui.music.charts.activity.BaiduMusicListActivity;
 import com.midas.music.ui.music.charts.activity.BasePlaylistActivity;
@@ -62,9 +62,9 @@ public interface ActivityComponent {
 
     void inject(EditSongListActivity editMusicActivity);
 
-    void inject(@NotNull ChatActivity chatActivity);
+//    void inject(@NotNull ChatActivity chatActivity);
 
-    void inject(@NotNull ChatDetailActivity chatDetailActivity);
+//    void inject(@NotNull ChatDetailActivity chatDetailActivity);
 
     void inject(@NotNull VideoPlayerActivity baiduMvDetailActivity);
 

@@ -19,12 +19,6 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-/**
- * 功能：本地歌曲列表
- * 作者：yonglong on 2016/8/10 20:49
- * 邮箱：643872807@qq.com
- * 版本：2.5
- */
 class ArtistFragment : BaseLazyFragment<ArtistPresenter>(), ArtistContract.View {
 
     private var mAdapter: ArtistAdapter? = null

@@ -15,7 +15,8 @@ class MusicCursorWrapper(cursor: Cursor) : CursorWrapper(cursor) {
             val artistId = getLong(getColumnIndex("artistid"))
             val artist = getString(getColumnIndex("artist"))
             val num = getInt(getColumnIndex("num"))
-            return Album(id, name, artist, artistId, num)
+            val coverUri = getString(getColumnIndex("coveruri"))
+            return Album(id, name, artist, artistId, num, coverUri)
         }
 
     val artists: Artist
@@ -23,7 +24,8 @@ class MusicCursorWrapper(cursor: Cursor) : CursorWrapper(cursor) {
             val id = getLong(getColumnIndex("artistid"))
             val name = getString(getColumnIndex("artist"))
             val num = getInt(getColumnIndex("num"))
-            return Artist(id, name, num)
+            val coverUri = getString(getColumnIndex("coveruri"))
+            return Artist(id, name, num, coverUri)
         }
 
 }

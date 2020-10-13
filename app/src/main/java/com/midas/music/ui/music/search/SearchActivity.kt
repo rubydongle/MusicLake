@@ -96,7 +96,7 @@ class SearchActivity : BaseActivity<SearchPresenter>(), SearchContract.View {
 
         if (!intent.getBooleanExtra("is_playlist", false)) {
             //获取热搜
-            mPresenter?.getHotSearchInfo()
+//            mPresenter?.getHotSearchInfo()
         } else {
         }
 
@@ -293,10 +293,11 @@ class SearchActivity : BaseActivity<SearchPresenter>(), SearchContract.View {
      */
     private fun setupViewPager() {
         val mAdapter = PageAdapter(supportFragmentManager)
-        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.QQ), "QQ")
-        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.NETEASE), "网易云")
-        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.XIAMI), "虾米")
-        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.BAIDU), "百度")
+        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.ANY), "本地")
+//        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.QQ), "QQ")
+//        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.NETEASE), "网易云")
+//        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.XIAMI), "虾米")
+//        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.BAIDU), "百度")
         mAdapter.addFragment(YoutubeSearchFragment.newInstance(queryString), "Youtube")
         viewPager?.adapter = mAdapter
         viewPager?.offscreenPageLimit = 4

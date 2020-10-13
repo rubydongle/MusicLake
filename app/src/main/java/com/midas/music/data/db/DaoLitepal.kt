@@ -210,7 +210,7 @@ object DaoLitepal {
 
 
     fun updateArtistList(): MutableList<Artist> {
-        val sql = "SELECT music.artistid,music.artist,count(music.title) as num FROM music where music.isonline=0 and music.type=\"local\" GROUP BY music.artist"
+        val sql = "SELECT music.artistid,music.artist,music.coveruri,count(music.title) as num FROM music where music.isonline=0 and music.type=\"local\" GROUP BY music.artist"
         val cursor = LitePal.findBySQL(sql)
         val results = mutableListOf<Artist>()
         if (cursor != null && cursor.count > 0) {
@@ -227,7 +227,7 @@ object DaoLitepal {
 
 
     fun updateAlbumList(): MutableList<Album> {
-        val sql = "SELECT music.albumid,music.album,music.artistid,music.artist,count(music.title) as num FROM music WHERE music.isonline=0 and music.type=\"local\" GROUP BY music.album"
+        val sql = "SELECT music.albumid,music.album,music.artistid,music.artist,music.coveruri,count(music.title) as num FROM music WHERE music.isonline=0 and music.type=\"local\" GROUP BY music.album"
         val cursor = LitePal.findBySQL(sql)
         val results = mutableListOf<Album>()
         if (cursor != null && cursor.count > 0) {

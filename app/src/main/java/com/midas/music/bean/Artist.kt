@@ -37,10 +37,11 @@ class Artist() : LitePalSupport(), Parcelable {
         albumSize = parcel.readInt()
     }
 
-    constructor(id: Long, name: String, count: Int) : this() {
+    constructor(id: Long, name: String, count: Int, coverUri: String) : this() {
         this.name = name
         this.artistId = id.toString()
         this.musicSize = count
+        this.picUrl = coverUri
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {

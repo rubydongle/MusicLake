@@ -12,6 +12,7 @@ import com.midas.music.ui.base.BaseFragment;
 import com.midas.music.ui.music.local.fragment.AlbumFragment;
 import com.midas.music.ui.music.local.fragment.ArtistFragment;
 import com.midas.music.ui.music.local.fragment.FoldersFragment;
+import com.midas.music.ui.music.local.fragment.LocalVideoFragment;
 import com.midas.music.ui.music.local.fragment.SongsFragment;
 import com.midas.music.ui.music.local.fragment.LocalPlaylistFragment;
 import com.google.android.material.tabs.TabLayout;
@@ -103,6 +104,8 @@ public class MainFragment extends BaseFragment {
         mAdapter.addFragment(AlbumFragment.Companion.newInstance(), getContext().getString(R.string.album_title));
         mAdapter.addFragment(ArtistFragment.Companion.newInstance(), getContext().getString(R.string.artist_title));
         mAdapter.addFragment(LocalPlaylistFragment.Companion.newInstance(), getContext().getString(R.string.playlist_title));
+//        mAdapter.addFragment(LocalVideoFragment.Companion.newInstance(), getContext().getString(R.string.video_title));
+
 //        mAdapter.addFragment(MyMusicFragment.Companion.newInstance(), getContext().getString(R.string.my));
 //        mAdapter.addFragment(DiscoverFragment.Companion.newInstance(), getContext().getString(R.string.discover));
 //        mAdapter.addFragment(ChartsDetailFragment.Companion.newInstance(), getContext().getString(R.string.charts));
