@@ -1,4 +1,4 @@
-package com.midas.music.api.music.doupan
+package com.midas.music.api.music.douban
 
 import com.google.gson.annotations.SerializedName
 
