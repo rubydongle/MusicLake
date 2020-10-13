@@ -1,5 +1,6 @@
 package com.midas.music.utils
 
+import android.content.ContentUris
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
@@ -27,21 +28,22 @@ object CoverLoader {
         if (albumId == "-1") {
             return null
         }
-        var uri: String? = null
-        try {
-            val cursor = context.contentResolver.query(
-                    Uri.parse("content://media/external/audio/albums/$albumId"),
-                    arrayOf("album_art"), null, null, null)
-            if (cursor != null) {
-                cursor.moveToNext()
-                uri = cursor.getString(0)
-                cursor.close()
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-        return uri
+        return ContentUris.withAppendedId(Uri.parse("content://media/external/audio/albumart"), albumId.toLong()).toString()
+//        var uri: String? = null
+//        try {
+//            val cursor = context.contentResolver.query(
+//                    Uri.parse("content://media/external/audio/albums/$albumId"),
+//                    arrayOf("album_art"), null, null, null)
+//            if (cursor != null) {
+//                cursor.moveToNext()
+//                uri = cursor.getString(0)
+//                cursor.close()
+//            }
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//
+//        return uri
     }
 
     /**

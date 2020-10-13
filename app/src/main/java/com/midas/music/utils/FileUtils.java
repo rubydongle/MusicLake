@@ -34,7 +34,7 @@ public class FileUtils {
      * @return
      */
     private static String getAppDir() {
-        return Environment.getExternalStorageDirectory() + "/musicLake/";
+        return Environment.getExternalStorageDirectory() + "/musioPlayer/";
     }
 
     public static String getMusicDir() {
