@@ -37,7 +37,7 @@ class Artist() : LitePalSupport(), Parcelable {
         albumSize = parcel.readInt()
     }
 
-    constructor(id: Long, name: String, count: Int, coverUri: String) : this() {
+    constructor(id: Long, name: String, count: Int, coverUri: String?) : this() {
         this.name = name
         this.artistId = id.toString()
         this.musicSize = count

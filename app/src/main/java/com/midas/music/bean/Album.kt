@@ -24,7 +24,7 @@ class Album : LitePalSupport, Serializable, Comparable<Album> {
 
     constructor() {}
 
-    constructor(id: String, name: String, artistName: String, artistId: Long, count: Int, coverUri: String) {
+    constructor(id: String, name: String, artistName: String, artistId: Long, count: Int, coverUri: String?) {
         this.name = name
         this.albumId = id
         this.artistName = artistName
