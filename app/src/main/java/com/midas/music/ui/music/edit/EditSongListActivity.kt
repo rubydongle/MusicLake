@@ -8,7 +8,6 @@ import com.midas.music.bean.Music
 import com.midas.music.common.Constants
 import com.midas.music.ui.base.BaseActivity
 import com.midas.music.ui.deleteLocalMusic
-import com.midas.music.ui.downloadBatchMusic
 import kotlinx.android.synthetic.main.activity_song_edit.*
 
 /**

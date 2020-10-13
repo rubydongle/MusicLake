@@ -280,7 +280,7 @@ class MyMusicFragment : BaseFragment<MyMusicPresenter>(), MyMusicContract.View {
             1 -> NavigationHelper.navigateToPlaylist(mFragmentComponent.activity, PlaylistLoader.getHistoryPlaylist(), null)
             2 -> NavigationHelper.navigateToPlaylist(mFragmentComponent.activity, PlaylistLoader.getFavoritePlaylist(), null)
             3 -> NavigationHelper.navigateToVideo(mFragmentComponent.activity, null)
-            4 -> NavigationHelper.navigateToDownload(mFragmentComponent.activity)
+//            4 -> NavigationHelper.navigateToDownload(mFragmentComponent.activity)
         }
     }
 
@@ -311,7 +311,7 @@ class MyMusicFragment : BaseFragment<MyMusicPresenter>(), MyMusicContract.View {
             Constants.PLAYLIST_CUSTOM_ID -> mPresenter?.loadPlaylist()
             Constants.PLAYLIST_LOVE_ID -> mPresenter?.updateFavorite()
             Constants.PLAYLIST_HISTORY_ID -> mPresenter?.updateHistory()
-            Constants.PLAYLIST_DOWNLOAD_ID -> mPresenter?.updateDownload()
+//            Constants.PLAYLIST_DOWNLOAD_ID -> mPresenter?.updateDownload()
         }
     }
 
@@ -367,7 +367,7 @@ class MyMusicFragment : BaseFragment<MyMusicPresenter>(), MyMusicContract.View {
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun updateDownloadEvent(event: FileEvent) {
         LogUtil.d(TAG, "updateDownloadEvent cache${event.isCache}")
-        mPresenter?.updateDownload()
+//        mPresenter?.updateDownload()
         mPresenter?.loadSongs()
     }
 

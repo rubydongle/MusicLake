@@ -1,4 +1,4 @@
-package com.midas.music.ui.music.playpage
+package com.midas.music.ui.music.player
 
 import com.midas.music.ui.base.BasePresenter
 import com.midas.music.bean.Music

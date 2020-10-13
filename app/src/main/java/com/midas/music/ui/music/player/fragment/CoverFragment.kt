@@ -1,27 +1,21 @@
-package com.midas.music.ui.music.playpage.fragment
+package com.midas.music.ui.music.player.fragment
 
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.LinearInterpolator
 import com.midas.music.R
 import com.midas.music.bean.Music
-import com.midas.music.common.Constants
-import com.midas.music.common.Extras
 import com.midas.music.common.NavigationHelper
 import com.midas.music.player.PlayManager
 import com.midas.music.ui.base.BaseContract
 import com.midas.music.ui.base.BaseFragment
 import com.midas.music.ui.base.BasePresenter
-import com.midas.music.ui.music.dialog.QualitySelectDialog
-import com.midas.music.ui.music.search.SearchActivity
 import com.midas.music.utils.LogUtil
 import kotlinx.android.synthetic.main.frag_player_coverview.*
-import org.jetbrains.anko.support.v4.startActivity
 
 class CoverFragment : BaseFragment<BasePresenter<BaseContract.BaseView>>() {
 

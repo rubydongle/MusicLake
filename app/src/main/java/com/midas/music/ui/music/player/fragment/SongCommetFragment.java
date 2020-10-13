@@ -1,4 +1,4 @@
-package com.midas.music.ui.music.playpage.fragment;
+package com.midas.music.ui.music.player.fragment;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;

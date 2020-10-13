@@ -9,7 +9,6 @@ import com.midas.music.di.scope.PerFragment;
 import com.midas.music.ui.music.artist.fragment.ArtistInfoFragment;
 import com.midas.music.ui.music.discover.artist.QQArtistListFragment;
 import com.midas.music.ui.music.discover.DiscoverFragment;
-import com.midas.music.ui.download.ui.DownloadManagerFragment;
 import com.midas.music.ui.music.local.fragment.AlbumDetailFragment;
 import com.midas.music.ui.music.local.fragment.AlbumFragment;
 import com.midas.music.ui.music.local.fragment.ArtistFragment;
@@ -29,7 +28,6 @@ import com.midas.music.ui.music.playlist.detail.PlaylistDetailFragment;
 import com.midas.music.ui.music.playlist.PlaylistFragment;
 import com.midas.music.ui.music.playlist.history.RecentlyFragment;
 import com.midas.music.ui.music.local.fragment.SongsFragment;
-import com.midas.music.ui.download.ui.DownloadedFragment;
 import com.midas.music.ui.music.playlist.square.TopPlaylistFragment;
 import com.midas.music.ui.music.playqueue.PlayQueueFragment;
 import com.midas.music.ui.music.search.fragment.SearchSongsFragment;
@@ -80,13 +78,9 @@ public interface FragmentComponent {
 
     void inject(LocalVideoFragment localVideoFragment);
 
-    void inject(DownloadedFragment downloadedFragment);
-
     void inject(DiscoverFragment discoverFragment);
 
     void inject(PlayQueueFragment playQueueFragment);
-
-    void inject(DownloadManagerFragment downloadManagerFragment);
 
     void inject(MvListFragment mvListFragment);
 

@@ -17,7 +17,6 @@ import com.midas.music.di.module.ApplicationModule;
 import com.midas.music.player.PlayManager;
 import com.midas.music.player.cache.CacheFileNameGenerator;
 import com.midas.music.socket.SocketManager;
-import com.midas.music.ui.download.TasksManager;
 import com.midas.music.utils.FileUtils;
 import com.midas.music.utils.LogUtil;
 import com.danikula.videocache.HttpProxyCacheServer;
@@ -133,7 +132,7 @@ public class MusicApp extends MultiDexApplication {
         LogUtil.d("onTerminate");
         super.onTerminate();
         //结束下载任务
-        TasksManager.INSTANCE.onDestroy();
+//        TasksManager.INSTANCE.onDestroy();
         FileDownloader.getImpl().pauseAll();
     }
 

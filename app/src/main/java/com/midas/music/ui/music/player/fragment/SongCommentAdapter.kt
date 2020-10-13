@@ -1,4 +1,4 @@
-package com.midas.music.ui.music.playpage.fragment
+package com.midas.music.ui.music.player.fragment
 
 import android.widget.ImageView
 import com.chad.library.adapter.base.BaseQuickAdapter

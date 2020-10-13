@@ -1,4 +1,4 @@
-package com.midas.music.ui.music.playpage
+package com.midas.music.ui.music.player
 
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
@@ -11,7 +11,6 @@ import android.widget.SeekBar
 import androidx.viewpager2.widget.ViewPager2
 import com.midas.music.R
 import com.midas.music.bean.Music
-import com.midas.music.common.Extras
 import com.midas.music.common.TransitionAnimationUtils
 import com.midas.music.event.MetaChangedEvent
 import com.midas.music.event.PlayModeEvent
@@ -21,13 +20,11 @@ import com.midas.music.player.PlayManager
 import com.midas.music.ui.music.edit.PlaylistManagerUtils
 import com.midas.music.ui.UIUtils
 import com.midas.music.ui.base.BaseActivity
-import com.midas.music.ui.music.comment.SongCommentActivity
 import com.midas.music.ui.music.dialog.BottomDialogFragment
 import com.midas.music.ui.music.dialog.MusicLyricDialog
-import com.midas.music.ui.music.dialog.QualitySelectDialog
 import com.midas.music.ui.music.local.adapter.PlayerPagerAdapter
-import com.midas.music.ui.music.playpage.fragment.CoverFragment
-import com.midas.music.ui.music.playpage.fragment.LyricFragment
+import com.midas.music.ui.music.player.fragment.CoverFragment
+import com.midas.music.ui.music.player.fragment.LyricFragment
 import com.midas.music.ui.music.playqueue.PlayQueueDialog
 import com.midas.music.ui.widget.DepthPageTransformer
 import com.midas.music.utils.FormatUtil
@@ -36,7 +33,6 @@ import com.midas.music.utils.Tools
 import kotlinx.android.synthetic.main.activity_player.*
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-import org.jetbrains.anko.startActivity
 
 class PlayerActivity : BaseActivity<PlayPresenter>(), PlayContract.View {
     private var playingMusic: Music? = null

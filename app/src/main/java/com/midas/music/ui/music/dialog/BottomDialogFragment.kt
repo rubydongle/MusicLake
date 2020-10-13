@@ -257,13 +257,13 @@ class BottomDialogFragment : BaseBottomSheetDialogFragment() {
 
                         }
                     }
-                    R.drawable.item_download -> {
-                        if (music?.type != Constants.LOCAL) {
-                            QualitySelectDialog.newInstance(music).apply {
-                                isDownload = true
-                            }.show(mContext)
-                        }
-                    }
+//                    R.drawable.item_download -> {
+//                        if (music?.type != Constants.LOCAL) {
+//                            QualitySelectDialog.newInstance(music).apply {
+//                                isDownload = true
+//                            }.show(mContext)
+//                        }
+//                    }
                     R.drawable.ic_share_black -> {
                         Tools.qqShare(mContext, PlayManager.getPlayingMusic())
                     }

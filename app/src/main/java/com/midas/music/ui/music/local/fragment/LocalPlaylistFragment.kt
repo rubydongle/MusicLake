@@ -278,7 +278,7 @@ class LocalPlaylistFragment : BaseFragment<LocalPresenter>(), LocalPlaylistContr
             1 -> NavigationHelper.navigateToPlaylist(mFragmentComponent.activity, PlaylistLoader.getHistoryPlaylist(), null)
             2 -> NavigationHelper.navigateToPlaylist(mFragmentComponent.activity, PlaylistLoader.getFavoritePlaylist(), null)
             3 -> NavigationHelper.navigateToVideo(mFragmentComponent.activity, null)
-            4 -> NavigationHelper.navigateToDownload(mFragmentComponent.activity)
+//            4 -> NavigationHelper.navigateToDownload(mFragmentComponent.activity)
         }
     }
 

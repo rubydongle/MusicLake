@@ -47,7 +47,7 @@ import com.midas.music.event.PlaylistEvent;
 import com.midas.music.event.StatusChangedEvent;
 import com.midas.music.player.playback.PlayProgressListener;
 import com.midas.music.player.playqueue.PlayQueueManager;
-import com.midas.music.ui.music.playpage.PlayerActivity;
+import com.midas.music.ui.music.player.PlayerActivity;
 import com.midas.music.ui.widget.appwidgets.StandardWidget;
 import com.midas.music.utils.CoverLoader;
 import com.midas.music.utils.FileUtils;

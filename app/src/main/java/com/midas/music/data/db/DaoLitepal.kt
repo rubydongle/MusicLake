@@ -2,7 +2,7 @@ package com.midas.music.data.db
 
 import com.midas.music.bean.*
 import com.midas.music.common.Constants
-import com.midas.music.ui.download.TasksManagerModel
+//import com.midas.music.ui.download.TasksManagerModel
 import com.midas.music.utils.FileUtils
 import org.litepal.LitePal
 
@@ -126,7 +126,7 @@ object DaoLitepal {
             FileUtils.delFile(music.uri)
         }
         LitePal.deleteAll(Music::class.java, "mid=?", music.mid.toString())
-        LitePal.deleteAll(TasksManagerModel::class.java, "mid=?", music.mid.toString())
+//        LitePal.deleteAll(TasksManagerModel::class.java, "mid=?", music.mid.toString())
         LitePal.deleteAll(MusicToPlaylist::class.java, "mid=?", music.mid.toString())
     }
 

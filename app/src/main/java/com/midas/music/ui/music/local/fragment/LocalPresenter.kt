@@ -10,7 +10,6 @@ import com.midas.music.data.SongLoader
 import com.midas.music.data.VideoLoader
 import com.midas.music.ui.music.edit.PlaylistManagerUtils
 import com.midas.music.ui.base.BasePresenter
-import com.midas.music.ui.download.DownloadLoader
 import com.midas.music.ui.my.user.UserStatus
 import com.midas.music.utils.LogUtil
 import com.midas.music.utils.SPUtils

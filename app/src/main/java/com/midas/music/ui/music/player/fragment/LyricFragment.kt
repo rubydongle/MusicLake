@@ -1,4 +1,4 @@
-package com.midas.music.ui.music.playpage.fragment
+package com.midas.music.ui.music.player.fragment
 
 import com.midas.music.R
 import com.midas.music.player.FloatLyricViewManager

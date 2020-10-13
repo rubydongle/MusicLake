@@ -1,4 +1,4 @@
-package com.midas.music.ui.music.playpage
+package com.midas.music.ui.music.player
 
 import android.graphics.Bitmap
 import android.graphics.drawable.AnimationDrawable

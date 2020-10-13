@@ -21,7 +21,6 @@ import com.midas.music.bean.Playlist
 import com.midas.music.event.PlaylistEvent
 import com.midas.music.player.MusicPlayerService
 import com.midas.music.player.PlayManager
-import com.midas.music.ui.download.ui.DownloadFragment
 import com.midas.music.ui.main.MainActivity
 import com.midas.music.ui.music.artist.activity.ArtistDetailActivity
 import com.midas.music.ui.music.local.fragment.LocalMusicFragment
@@ -29,7 +28,7 @@ import com.midas.music.ui.music.local.fragment.LocalVideoFragment
 import com.midas.music.ui.music.playlist.detail.PlaylistDetailActivity
 import com.midas.music.ui.music.playlist.history.RecentlyFragment
 import com.midas.music.ui.music.playlist.love.LoveFragment
-import com.midas.music.ui.music.playpage.PlayerActivity
+import com.midas.music.ui.music.player.PlayerActivity
 import com.midas.music.ui.music.playqueue.PlayQueueFragment
 import com.midas.music.utils.FileUtils
 import com.midas.music.utils.LogUtil
@@ -126,22 +125,22 @@ object NavigationHelper {
         transaction.addToBackStack(fragment.getTag()).commit()
     }
 
-    fun navigateToDownload(context: Activity, isCache: Boolean = false, transitionViews: Pair<View, String>? = null) {
-        val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
-        val fragment: androidx.fragment.app.Fragment
-
-        if (transitionViews != null) {
-            transaction.addSharedElement(transitionViews.first, transitionViews.second)
-            fragment = DownloadFragment.newInstance(isCache)
-        } else {
-            //            transaction.setCustomAnimations(R.anim.activity_fade_in,
-            //                    R.anim.activity_fade_out, R.anim.activity_fade_in, R.anim.activity_fade_out);
-            fragment = DownloadFragment.newInstance(isCache)
-        }
-        transaction.hide((context.supportFragmentManager.findFragmentById(R.id.fragment_container)!!))
-        transaction.add(R.id.fragment_container, fragment)
-        transaction.addToBackStack(fragment.getTag()).commit()
-    }
+//    fun navigateToDownload(context: Activity, isCache: Boolean = false, transitionViews: Pair<View, String>? = null) {
+//        val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
+//        val fragment: androidx.fragment.app.Fragment
+//
+//        if (transitionViews != null) {
+//            transaction.addSharedElement(transitionViews.first, transitionViews.second)
+//            fragment = DownloadFragment.newInstance(isCache)
+//        } else {
+//            //            transaction.setCustomAnimations(R.anim.activity_fade_in,
+//            //                    R.anim.activity_fade_out, R.anim.activity_fade_in, R.anim.activity_fade_out);
+//            fragment = DownloadFragment.newInstance(isCache)
+//        }
+//        transaction.hide((context.supportFragmentManager.findFragmentById(R.id.fragment_container)!!))
+//        transaction.add(R.id.fragment_container, fragment)
+//        transaction.addToBackStack(fragment.getTag()).commit()
+//    }
 
     fun navigateToPlaylist(context: Activity, playlist: Playlist, transitionViews: Pair<View, String>?) {
         val intent = Intent(context, PlaylistDetailActivity::class.java)

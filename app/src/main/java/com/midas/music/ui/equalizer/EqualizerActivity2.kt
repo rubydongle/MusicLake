@@ -1,4 +1,4 @@
-package com.midas.music.ui.music.importplaylist
+package com.midas.music.ui.equalizer
 
 import android.content.Intent
 import android.view.View
@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_import_playlist.*
 
 
 @Suppress("UNUSED_ANONYMOUS_PARAMETER")
-class ImportPlaylistActivity : BaseActivity<BasePresenter<BaseContract.BaseView>>() {
+class EqualizerActivity2 : BaseActivity<BasePresenter<BaseContract.BaseView>>() {
 
     var mAdapter: SongAdapter? = null
     var name: String? = null
@@ -157,7 +157,7 @@ class ImportPlaylistActivity : BaseActivity<BasePresenter<BaseContract.BaseView>
             }
         }
         mAdapter?.setOnItemChildClickListener { _, _, position ->
-            BottomDialogFragment.newInstance(result.musicList[position], Constants.PLAYLIST_IMPORT_ID).show(this@ImportPlaylistActivity)
+            BottomDialogFragment.newInstance(result.musicList[position], Constants.PLAYLIST_IMPORT_ID).show(this@EqualizerActivity2)
         }
 
     }

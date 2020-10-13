@@ -21,8 +21,8 @@ import com.midas.music.event.PlaylistEvent
 import com.midas.music.event.StatusChangedEvent
 import com.midas.music.player.PlayManager
 import com.midas.music.ui.base.BaseFragment
-import com.midas.music.ui.music.playpage.PlayContract
-import com.midas.music.ui.music.playpage.PlayPresenter
+import com.midas.music.ui.music.player.PlayContract
+import com.midas.music.ui.music.player.PlayPresenter
 import com.midas.music.ui.music.playqueue.PlayQueueDialog
 import com.midas.music.utils.LogUtil
 import kotlinx.android.synthetic.main.play_control_menu.*

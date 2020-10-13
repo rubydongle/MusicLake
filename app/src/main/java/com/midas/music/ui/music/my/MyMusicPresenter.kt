@@ -10,7 +10,6 @@ import com.midas.music.data.SongLoader
 import com.midas.music.data.VideoLoader
 import com.midas.music.ui.music.edit.PlaylistManagerUtils
 import com.midas.music.ui.base.BasePresenter
-import com.midas.music.ui.download.DownloadLoader
 import com.midas.music.ui.my.user.UserStatus
 import com.midas.music.utils.LogUtil
 import com.midas.music.utils.SPUtils
@@ -65,14 +64,14 @@ constructor() : BasePresenter<MyMusicContract.View>(), MyMusicContract.Presenter
     /**
      * 更新下载歌曲
      */
-    fun updateDownload() {
-        doAsync {
-            val data = DownloadLoader.getDownloadList()
-            uiThread {
-                mView?.showDownloadList(data)
-            }
-        }
-    }
+//    fun updateDownload() {
+//        doAsync {
+//            val data = DownloadLoader.getDownloadList()
+//            uiThread {
+//                mView?.showDownloadList(data)
+//            }
+//        }
+//    }
 
     /**
      * 更新下载歌曲
@@ -92,7 +91,7 @@ constructor() : BasePresenter<MyMusicContract.View>(), MyMusicContract.Presenter
         updateHistory()
         updateFavorite()
         updateLocalVideo()
-        updateDownload()
+//        updateDownload()
     }
 
     fun loadMusicLakeNotice() {
