@@ -2,19 +2,17 @@ package com.midas.music.ui.music.local.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.tabs.TabLayout
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
-import com.midas.music.BuildConfig
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.midas.music.MusicApp
 import com.midas.music.R
 import com.midas.music.bean.Music
 import com.midas.music.bean.NoticeInfo
 import com.midas.music.bean.Playlist
-import com.midas.music.data.PlaylistLoader
 import com.midas.music.common.Constants
 import com.midas.music.common.Extras
 import com.midas.music.common.NavigationHelper
+import com.midas.music.data.PlaylistLoader
 import com.midas.music.event.*
 import com.midas.music.player.PlayManager
 import com.midas.music.ui.base.BaseFragment

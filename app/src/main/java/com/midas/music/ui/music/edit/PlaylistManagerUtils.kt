@@ -120,16 +120,17 @@ object PlaylistManagerUtils {
             ToastUtils.show(MusicApp.getAppContext().resources.getString(R.string.no_song_to_add))
             return
         }
-        showPlaylistSelectDialog(activity, callBack = {
-            when (it) {
-                "本地歌单" -> {
-                    addToLocalPlaylist(activity, musics)
-                }
-                "在线歌单" -> {
-                    addToOnlinePlaylist(activity, musics)
-                }
-            }
-        })
+        addToLocalPlaylist(activity, musics)
+//        showPlaylistSelectDialog(activity, callBack = {
+//            when (it) {
+//                "本地歌单" -> {
+//                    addToLocalPlaylist(activity, musics)
+//                }
+//                "在线歌单" -> {
+//                    addToOnlinePlaylist(activity, musics)
+//                }
+//            }
+//        })
     }
 
     /**

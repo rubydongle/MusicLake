@@ -62,15 +62,15 @@ class EditSongListActivity : BaseActivity<EditSongListPresenter>() {
             }
             PlaylistManagerUtils.addToPlaylist(this, selectMusic)
         }
-        downloadTv.setOnClickListener {
-            val selectMusic = mutableListOf<Music>()
-            mAdapter?.checkedMap?.forEach {
-                if (it.value.isDl && it.value.type != Constants.LOCAL) {
-                    selectMusic.add(it.value)
-                }
-            }
-            downloadBatchMusic(selectMusic)
-        }
+//        downloadTv.setOnClickListener {
+//            val selectMusic = mutableListOf<Music>()
+//            mAdapter?.checkedMap?.forEach {
+//                if (it.value.isDl && it.value.type != Constants.LOCAL) {
+//                    selectMusic.add(it.value)
+//                }
+//            }
+//            downloadBatchMusic(selectMusic)
+//        }
 
         deleteTv.setOnClickListener {
             val selectMusic = mutableListOf<Music>()

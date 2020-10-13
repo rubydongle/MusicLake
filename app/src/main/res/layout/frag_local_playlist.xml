@@ -28,24 +28,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <com.midas.music.ui.widget.LocalItemView
-                    android:id="@+id/usualplayView"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_56"
-                    android:gravity="center_vertical"
-                    app:iv_icon="@drawable/ic_history_black"
-                    app:iv_icon_color="@color/amber"
-                    app:tv_desc="@string/default_num"
-                    app:tv_name="@string/item_usualplay" />
-                <com.midas.music.ui.widget.LocalItemView
-                    android:id="@+id/recentaddView"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_56"
-                    android:gravity="center_vertical"
-                    app:iv_icon="@drawable/ic_history_black"
-                    app:iv_icon_color="@color/amber"
-                    app:tv_desc="@string/default_num"
-                    app:tv_name="@string/item_recentadd" />
+<!--                <com.midas.music.ui.widget.LocalItemView-->
+<!--                    android:id="@+id/usualplayView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/dp_56"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    app:iv_icon="@drawable/ic_history_black"-->
+<!--                    app:iv_icon_color="@color/amber"-->
+<!--                    app:tv_desc="@string/default_num"-->
+<!--                    app:tv_name="@string/item_usualplay" />-->
+<!--                <com.midas.music.ui.widget.LocalItemView-->
+<!--                    android:id="@+id/recentaddView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/dp_56"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    app:iv_icon="@drawable/ic_history_black"-->
+<!--                    app:iv_icon_color="@color/amber"-->
+<!--                    app:tv_desc="@string/default_num"-->
+<!--                    app:tv_name="@string/item_recentadd" />-->
 
                 <com.midas.music.ui.widget.LocalItemView
                     android:id="@+id/historyView"

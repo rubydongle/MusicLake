@@ -7,16 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
 import com.midas.music.R;
 import com.midas.music.ui.base.BaseFragment;
 import com.midas.music.ui.music.local.fragment.AlbumFragment;
 import com.midas.music.ui.music.local.fragment.ArtistFragment;
 import com.midas.music.ui.music.local.fragment.FoldersFragment;
-import com.midas.music.ui.music.local.fragment.LocalVideoFragment;
-import com.midas.music.ui.music.local.fragment.SongsFragment;
 import com.midas.music.ui.music.local.fragment.LocalPlaylistFragment;
-import com.google.android.material.tabs.TabLayout;
-import com.midas.music.ui.music.my.MyMusicFragment;
+import com.midas.music.ui.music.local.fragment.SongsFragment;
 
 import butterknife.BindView;
 

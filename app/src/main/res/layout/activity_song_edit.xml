@@ -49,20 +49,20 @@
             android:textColor="@color/textColorPrimary"
             android:textSize="@dimen/sp_12" />
 
-        <TextView
-            android:id="@+id/downloadTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_8"
-            android:layout_weight="1"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:drawableTop="@drawable/item_download"
-            android:drawableTint="@color/iconColor"
-            android:gravity="center"
-            android:lineSpacingExtra="2sp"
-            android:text="@string/download_batch"
-            android:textColor="@color/textColorPrimary"
-            android:textSize="@dimen/sp_12" />
+<!--        <TextView-->
+<!--            android:id="@+id/downloadTv"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="@dimen/dp_8"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="?android:attr/selectableItemBackgroundBorderless"-->
+<!--            android:drawableTop="@drawable/item_download"-->
+<!--            android:drawableTint="@color/iconColor"-->
+<!--            android:gravity="center"-->
+<!--            android:lineSpacingExtra="2sp"-->
+<!--            android:text="@string/download_batch"-->
+<!--            android:textColor="@color/textColorPrimary"-->
+<!--            android:textSize="@dimen/sp_12" />-->
 
         <TextView
             android:id="@+id/deleteTv"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">音乐播放器</string>
+    <string name="app_name">Musio Player</string>
     <string name="sure">确定</string>
     <string name="open">打开</string>
     <string name="close">关闭</string>
@@ -315,7 +315,7 @@
     <string name="popup_album">查看专辑</string>
     <string name="popup_share">分享</string>
 
-    <string name="download_batch">批量下载</string>
+<!--    <string name="download_batch">批量下载</string>-->
     <string name="download_add_success">下载任务添加成功</string>
     <string name="download_network_tips">正在使用数据流量，是否继续？</string>
     <string name="download_error">下载地址异常</string>
