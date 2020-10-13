@@ -200,9 +200,9 @@ class PlayerActivity : BaseActivity<PlayPresenter>(), PlayContract.View {
     /**
      * 添加到歌單
      */
-    fun showSongComment(view: View?) {
-        startActivity<SongCommentActivity>(Extras.SONG to playingMusic)
-    }
+//    fun showSongComment(view: View?) {
+//        startActivity<SongCommentActivity>(Extras.SONG to playingMusic)
+//    }
 
     /**
      * 分享歌曲
@@ -215,11 +215,11 @@ class PlayerActivity : BaseActivity<PlayPresenter>(), PlayContract.View {
     /**
      * 歌曲下载
      */
-    fun downloadMusic(view: View?) {
-        QualitySelectDialog.newInstance(playingMusic).apply {
-            isDownload = true
-        }.show(this)
-    }
+//    fun downloadMusic(view: View?) {
+//        QualitySelectDialog.newInstance(playingMusic).apply {
+//            isDownload = true
+//        }.show(this)
+//    }
 
     override fun setPlayingBitmap(albumArt: Bitmap?) {
         coverFragment?.setImageBitmap(albumArt)

@@ -58,21 +58,21 @@ class CoverFragment : BaseFragment<BasePresenter<BaseContract.BaseView>>() {
         }
 
         //音质点击
-        tv_quality.setOnClickListener {
-            QualitySelectDialog.newInstance(PlayManager.getPlayingMusic()).apply {
-                changeSuccessListener = {
-                    this@CoverFragment.tv_quality.text = it
-                }
-                isDownload = false
-            }.show(activity as AppCompatActivity)
-        }
+//        tv_quality.setOnClickListener {
+//            QualitySelectDialog.newInstance(PlayManager.getPlayingMusic()).apply {
+//                changeSuccessListener = {
+//                    this@CoverFragment.tv_quality.text = it
+//                }
+//                isDownload = false
+//            }.show(activity as AppCompatActivity)
+//        }
 
         //点击歌曲类型，直接去搜索
-        tv_source.setOnClickListener {
-            searchInfo?.let {
-                startActivity<SearchActivity>(Extras.SEARCH_INFO to it)
-            }
-        }
+//        tv_source.setOnClickListener {
+//            searchInfo?.let {
+//                startActivity<SearchActivity>(Extras.SEARCH_INFO to it)
+//            }
+//        }
         cover2View.setOnClickListener {
             clickListener?.invoke()
         }
@@ -89,23 +89,23 @@ class CoverFragment : BaseFragment<BasePresenter<BaseContract.BaseView>>() {
         if (context == null) return
         LogUtil.d(TAG, "CoverFragment = ${playingMusic.type}")
         searchInfo = playingMusic.title + "-" + playingMusic.artist
-        val value: String? = when (playingMusic?.type) {
-            Constants.QQ -> {
-                getString(R.string.res_qq)
-            }
-            Constants.BAIDU -> {
-                getString(R.string.res_baidu)
-            }
-            Constants.NETEASE -> {
-                getString(R.string.res_wangyi)
-            }
-            Constants.XIAMI -> {
-                getString(R.string.res_xiami)
-            }
-            else -> {
-                getString(R.string.res_local)
-            }
-        }
+//        val value: String? = when (playingMusic?.type) {
+//            Constants.QQ -> {
+//                getString(R.string.res_qq)
+//            }
+//            Constants.BAIDU -> {
+//                getString(R.string.res_baidu)
+//            }
+//            Constants.NETEASE -> {
+//                getString(R.string.res_wangyi)
+//            }
+//            Constants.XIAMI -> {
+//                getString(R.string.res_xiami)
+//            }
+//            else -> {
+//                getString(R.string.res_local)
+//            }
+//        }
         val quality = when (playingMusic.quality) {
             128000 -> getString(R.string.sound_quality_standard)
             192000 -> getString(R.string.sound_quality_high)
@@ -114,9 +114,9 @@ class CoverFragment : BaseFragment<BasePresenter<BaseContract.BaseView>>() {
             else -> getString(R.string.sound_quality_standard)
         }
         tv_quality?.text = quality
-        value?.let {
-            tv_source?.text = value
-        }
+//        value?.let {
+//            tv_source?.text = value
+//        }
     }
 
     /**

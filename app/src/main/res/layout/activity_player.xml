@@ -243,24 +243,23 @@
                 android:layout_weight="1"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/equalizer"
-
                 android:gravity="center"
                 android:src="@drawable/ic_equalizer"
                 android:visibility="gone" />
 
 
-            <net.steamcrafted.materialiconlib.MaterialIconView
-                android:id="@+id/downloadIv"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:gravity="center"
-                android:onClick="downloadMusic"
-                app:materialIcon="arrow_collapse_down"
-                app:materialIconColor="@color/white"
-                app:materialIconSize="24dp" />
+<!--            <net.steamcrafted.materialiconlib.MaterialIconView-->
+<!--                android:id="@+id/downloadIv"-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="?android:attr/selectableItemBackgroundBorderless"-->
+<!--                android:gravity="center"-->
+<!--                android:onClick="downloadMusic"-->
+<!--                app:materialIcon="arrow_collapse_down"-->
+<!--                app:materialIconColor="@color/white"-->
+<!--                app:materialIconSize="24dp" />-->
 
             <net.steamcrafted.materialiconlib.MaterialIconView
                 android:id="@+id/shareIv"
@@ -288,18 +287,18 @@
                 app:materialIconColor="@color/white"
                 app:materialIconSize="24dp" />
 
-            <net.steamcrafted.materialiconlib.MaterialIconView
-                android:id="@+id/songCommentTv"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:gravity="center"
-                android:onClick="showSongComment"
-                app:materialIcon="comment_multiple_outline"
-                app:materialIconColor="@color/white"
-                app:materialIconSize="24dp" />
+<!--            <net.steamcrafted.materialiconlib.MaterialIconView-->
+<!--                android:id="@+id/songCommentTv"-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="24dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="?android:attr/selectableItemBackgroundBorderless"-->
+<!--                android:gravity="center"-->
+<!--                android:onClick="showSongComment"-->
+<!--                app:materialIcon="comment_multiple_outline"-->
+<!--                app:materialIconColor="@color/white"-->
+<!--                app:materialIconSize="24dp" />-->
 
         </LinearLayout>
 

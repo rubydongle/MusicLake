@@ -21,15 +21,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_play_select"
-            android:drawableEnd="@drawable/ic_arrow_down_small"
-            android:drawablePadding="@dimen/dp_2"
-            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
             android:paddingTop="2dp"
-            android:paddingEnd="@dimen/dp_4"
+            android:paddingRight="10dp"
             android:paddingBottom="2dp"
             android:text="标准"
             android:textColor="@color/white"
             android:textSize="12sp" />
+<!--        android:paddingStart="10dp"-->
+<!--        android:paddingTop="2dp"-->
+<!--        android:paddingEnd="@dimen/dp_4"-->
+<!--        android:paddingBottom="2dp"-->
+        <!--        android:drawablePadding="@dimen/dp_2"-->
+        <!--        android:drawableEnd="@drawable/ic_arrow_down_small"-->
 
         <TextView
             android:id="@+id/tv_source"
