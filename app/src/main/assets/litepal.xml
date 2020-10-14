@@ -11,6 +11,6 @@
         <mapping class="com.midas.music.bean.MessageInfoBean" />
         <mapping class="com.midas.music.bean.UserInfoBean" />
         <mapping class="com.midas.music.bean.SearchHistoryBean" />
-        <mapping class="com.midas.music.ui.download.TasksManagerModel" />
+<!--        <mapping class="com.midas.music.ui.download.TasksManagerModel" />-->
     </list>
 </litepal>
