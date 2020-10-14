@@ -8,6 +8,7 @@ import android.media.audiofx.BassBoost;
 import android.media.audiofx.Equalizer;
 import android.media.audiofx.PresetReverb;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -15,6 +16,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.material.chip.Chip;
@@ -26,8 +28,10 @@ import butterknife.BindView;
 
 public class EqualizerActivity3 extends BaseActivity {
 
-    @BindView(R.id.equalizer_switch)
-    SwitchCompat equalizerSwitch;
+//    @BindView(R.id.title_switch_btn)
+    SwitchCompat titleEqualizerSwitch;
+//    @BindView(R.id.equalizer_switch)
+//    SwitchCompat equalizerSwitch;
     @BindView(R.id.chip_group)
     ChipGroup chipGroup;
     @BindView(R.id.controllerBass)
@@ -60,6 +64,12 @@ public class EqualizerActivity3 extends BaseActivity {
 
     @Override
     protected void initView() {
+        View view = LayoutInflater.from(this).inflate(R.layout.switch_layout_view, null);
+        ActionBar.LayoutParams layoutParams = new ActionBar.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT);
+        getSupportActionBar().setCustomView(view, layoutParams);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        titleEqualizerSwitch = view.findViewById(R.id.title_switch_btn);
+
         Settings.isEditing = true;
 
 //        if (getArguments() != null && getArguments().containsKey(ARG_AUDIO_SESSIOIN_ID)){
@@ -98,8 +108,8 @@ public class EqualizerActivity3 extends BaseActivity {
             mEqualizer.usePreset((short) Settings.presetPos);
         }
 
-        equalizerSwitch.setChecked(Settings.isEqualizerEnabled);
-        equalizerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        titleEqualizerSwitch.setChecked(Settings.isEqualizerEnabled);
+        titleEqualizerSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 mEqualizer.setEnabled(isChecked);
@@ -109,7 +119,6 @@ public class EqualizerActivity3 extends BaseActivity {
                 Settings.equalizerModel.setEqualizerEnabled(isChecked);
             }
         });
-
 
         bassController.setLabel(R.string.euqalizer_bass);
         reverbController.setLabel(R.string.euqalizer_3d);
