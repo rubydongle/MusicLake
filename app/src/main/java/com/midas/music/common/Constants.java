@@ -170,7 +170,7 @@ public class Constants {
     /**
      * Bugly app_id
      */
-    public static final String BUG_APP_ID = "fd892b37ea";
+    public static final String BUG_APP_ID = "e4b1145203";
 
     /**
      * 关于的GitHub地址
