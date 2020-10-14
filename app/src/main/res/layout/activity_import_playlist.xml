@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.midas.music.ui.equalizer.EqualizerActivity2">
+    tools:context="com.midas.music.ui.equalizer.EqualizerActivity3">
 
     <include
         android:id="@+id/include2"
@@ -21,7 +21,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="com.midas.music.ui.equalizer.EqualizerActivity2">
+            tools:context="com.midas.music.ui.equalizer.EqualizerActivity3">
 
             <TextView
                 android:id="@+id/import_playlist_tips_tv"

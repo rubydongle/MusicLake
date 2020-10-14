@@ -211,12 +211,12 @@
             android:theme="@style/MainActivityTheme" />
 
         <activity
-            android:name="com.midas.music.ui.equalizer.EqualizerActivity2"
+            android:name="com.midas.music.ui.equalizer.EqualizerActivity3"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/import_playlist"
+            android:label="@string/equalizer"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden">
-        </activity>
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            android:theme="@style/AppTheme.Equalizer" />
         <activity
             android:name="com.tencent.bugly.beta.ui.BetaActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale"

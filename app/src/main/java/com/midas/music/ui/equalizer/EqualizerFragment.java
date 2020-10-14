@@ -37,10 +37,9 @@ public class EqualizerFragment extends BaseFragment {
     float[] points;
     int y = 0;
     short numberOfFrequencyBands;
-    LinearLayout mLinearLayout;
+//    LinearLayout mLinearLayout;
     SeekBar[] seekBarFinal = new SeekBar[5];
     AnalogController bassController, reverbController;
-//    FrameLayout equalizerBlocker;
     Context ctx;
     ChipGroup chipGroup;
 
@@ -222,7 +221,7 @@ public class EqualizerFragment extends BaseFragment {
             }
         });
 
-        mLinearLayout = view.findViewById(R.id.equalizerContainer);
+//        mLinearLayout = view.findViewById(R.id.equalizerContainer);
 
         TextView equalizerHeading = new TextView(getContext());
         equalizerHeading.setText(R.string.equalizer);
@@ -343,8 +342,8 @@ public class EqualizerFragment extends BaseFragment {
 
         equalizeSound();
 
-        Button mEndButton = new Button(getContext());
-        mEndButton.setBackgroundColor(themeColor);
+//        Button mEndButton = new Button(getContext());
+//        mEndButton.setBackgroundColor(themeColor);
 //        mEndButton.setTextColor(Color.WHITE);
     }
 

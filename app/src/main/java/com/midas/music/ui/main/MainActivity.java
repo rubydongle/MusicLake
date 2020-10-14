@@ -26,7 +26,6 @@ import com.midas.music.event.MetaChangedEvent;
 import com.midas.music.player.PlayManager;
 import com.midas.music.ui.UIUtilsKt;
 import com.midas.music.ui.base.BaseActivity;
-import com.midas.music.ui.equalizer.EqualizerActivity;
 import com.midas.music.ui.music.search.SearchActivity;
 import com.midas.music.ui.my.BindLoginActivity;
 import com.midas.music.ui.my.user.User;
@@ -265,8 +264,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 //                mTargetClass = TestActivity.class;
 //                break;
             case R.id.nav_menu_equalizer:
-//                NavigationHelper.INSTANCE.navigateToSoundEffect(this);
-                mTargetClass = EqualizerActivity.class;
+                NavigationHelper.INSTANCE.navigateToSoundEffect(this);
+//                mTargetClass = EqualizerActivity2.class;
                 break;
 //            case R.id.nav_menu_exit:
 //                mTargetClass = null;
