@@ -83,7 +83,7 @@ public class MusicApp extends MultiDexApplication {
      * 初始化bugly
      */
     private void initBugly() {
-        Bugly.init(getApplicationContext(), Constants.BUG_APP_ID, BuildConfig.DEBUG);
+        Bugly.init(getApplicationContext(), Constants.BUG_APP_ID, false);//BuildConfig.DEBUG);
     }
 
 
