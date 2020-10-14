@@ -1,6 +1,5 @@
 package com.midas.music.ui.my;
 
-import android.app.Activity;
 import android.content.Intent;
 
 import com.cyl.musicapi.netease.LoginInfo;
@@ -26,9 +25,9 @@ public interface LoginContract {
     interface Presenter extends BaseContract.BasePresenter<LoginContract.View> {
         void login(Map<String, String> params);
 
-        void loginByQQ(Activity activity);
+//        void loginByQQ(Activity activity);
 
-        void bindNetease(String userName, String pwd);
+//        void bindNetease(String userName, String pwd);
 
         void onActivityResult(int requestCode, int resultCode, Intent data);
 

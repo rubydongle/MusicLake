@@ -1,5 +1,6 @@
 package com.midas.music.ui
 
+//import com.liulishuo.filedownloader.FileDownloader
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.content.Context
@@ -26,18 +27,16 @@ import com.midas.music.bean.Playlist
 import com.midas.music.common.Constants
 import com.midas.music.common.NavigationHelper
 import com.midas.music.data.SongLoader
-import com.midas.music.data.db.DaoLitepal
 import com.midas.music.event.FileEvent
 import com.midas.music.event.LoginEvent
 import com.midas.music.event.PlaylistEvent
 import com.midas.music.player.playqueue.PlayQueueManager
-import com.midas.music.socket.SocketManager
 import com.midas.music.ui.main.MainActivity
 import com.midas.music.ui.my.user.User
-import com.midas.music.ui.my.user.UserStatus
-import com.midas.music.utils.*
-import com.liulishuo.filedownloader.FileDownloader
-import com.sina.weibo.sdk.auth.AccessTokenKeeper
+import com.midas.music.utils.CountDownUtils
+import com.midas.music.utils.FileUtils
+import com.midas.music.utils.LogUtil
+import com.midas.music.utils.ToastUtils
 import org.greenrobot.eventbus.EventBus
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -414,34 +413,34 @@ fun updateLoginToken() {
 /**
  * 注销登录
  */
-fun logout() {
-    UserStatus.clearUserInfo()
-    UserStatus.saveLoginStatus(false)
-    SPUtils.putAnyCommit(SPUtils.QQ_ACCESS_TOKEN, "")
-    SPUtils.putAnyCommit(SPUtils.QQ_OPEN_ID, "")
-    SocketManager.toggleSocket(false)
-    MusicApp.mTencent?.logout(MusicApp.getAppContext())
-    AccessTokenKeeper.clear(MusicApp.getAppContext())
-    EventBus.getDefault().post(LoginEvent(false, null))
-}
+//fun logout() {
+//    UserStatus.clearUserInfo()
+//    UserStatus.saveLoginStatus(false)
+//    SPUtils.putAnyCommit(SPUtils.QQ_ACCESS_TOKEN, "")
+//    SPUtils.putAnyCommit(SPUtils.QQ_OPEN_ID, "")
+//    SocketManager.toggleSocket(false)
+//    MusicApp.mTencent?.logout(MusicApp.getAppContext())
+//    AccessTokenKeeper.clear(MusicApp.getAppContext())
+//    EventBus.getDefault().post(LoginEvent(false, null))
+//}
 
 /**
  * 取消绑定网易云音乐
  */
-fun logoutNetease(success: (() -> Unit)?) {
-    val observer = NeteaseApiServiceImpl.logout()
-    ApiManager.request(observer, object : RequestCallBack<Any> {
-        override fun error(msg: String?) {
-        }
-
-        override fun success(result: Any?) {
-            LogUtil.d("logoutNetease = " + result.toString())
-            //重置本地用户ID
-            SPUtils.putAnyCommit(SPUtils.SP_KEY_NETEASE_UID, "")
-            success?.invoke()
-        }
-    })
-}
+//fun logoutNetease(success: (() -> Unit)?) {
+//    val observer = NeteaseApiServiceImpl.logout()
+//    ApiManager.request(observer, object : RequestCallBack<Any> {
+//        override fun error(msg: String?) {
+//        }
+//
+//        override fun success(result: Any?) {
+//            LogUtil.d("logoutNetease = " + result.toString())
+//            //重置本地用户ID
+//            SPUtils.putAnyCommit(SPUtils.SP_KEY_NETEASE_UID, "")
+//            success?.invoke()
+//        }
+//    })
+//}
 
 /**
  * 倒计时弹窗

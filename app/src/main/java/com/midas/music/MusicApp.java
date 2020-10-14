@@ -21,10 +21,7 @@ import com.midas.music.utils.FileUtils;
 import com.midas.music.utils.LogUtil;
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.google.gson.Gson;
-import com.liulishuo.filedownloader.FileDownloader;
-import com.liulishuo.filedownloader.util.FileDownloadLog;
 import com.tencent.bugly.Bugly;
-import com.tencent.tauth.Tencent;
 
 import org.litepal.LitePal;
 
@@ -43,9 +40,6 @@ public class MusicApp extends MultiDexApplication {
 
     @SuppressLint("StaticFieldLeak")
     public static Context mContext;
-
-    //QQ第三方登录
-    public static Tencent mTencent;
 
     public static Gson GSON = new Gson();
 
@@ -73,7 +67,6 @@ public class MusicApp extends MultiDexApplication {
         registerListener();
         initApplicationComponent();
         initSDK();
-        initFileDownload();
     }
 
     private void initSDK() {
@@ -84,14 +77,6 @@ public class MusicApp extends MultiDexApplication {
 //        if (BuildConfig.DEBUG) {
 //            LeakCanary.install(this);
 //        }
-    }
-
-    /**
-     * 初始化文件下载
-     */
-    private void initFileDownload() {
-        FileDownloadLog.NEED_LOG = BuildConfig.DEBUG;
-        FileDownloader.setupOnApplicationOnCreate(this);
     }
 
     /**
@@ -133,7 +118,7 @@ public class MusicApp extends MultiDexApplication {
         super.onTerminate();
         //结束下载任务
 //        TasksManager.INSTANCE.onDestroy();
-        FileDownloader.getImpl().pauseAll();
+//        FileDownloader.getImpl().pauseAll();
     }
 
     /**

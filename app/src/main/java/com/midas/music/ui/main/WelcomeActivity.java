@@ -8,19 +8,18 @@ import android.widget.ImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.cyl.musicapi.BaseApiImpl;
+import com.google.android.material.snackbar.Snackbar;
 import com.midas.music.MusicApp;
 import com.midas.music.R;
-import com.midas.music.common.Constants;
 import com.midas.music.ui.base.BaseActivity;
 import com.midas.music.utils.SPUtils;
 import com.midas.music.utils.SystemUtils;
-import com.google.android.material.snackbar.Snackbar;
-import com.sina.weibo.sdk.WbSdk;
-import com.sina.weibo.sdk.auth.AuthInfo;
 import com.tbruyelle.rxpermissions2.RxPermissions;
-import com.tencent.tauth.Tencent;
 
 import butterknife.BindView;
+
+//import com.sina.weibo.sdk.WbSdk;
+//import com.sina.weibo.sdk.auth.AuthInfo;
 
 /**
  * Created by 永龙 on 2016/3/19.
@@ -60,7 +59,7 @@ public class WelcomeActivity extends BaseActivity {
     protected void initData() {
         //初始化WebView
         BaseApiImpl.INSTANCE.initWebView(MusicApp.getInstance());
-        initLogin();
+//        initLogin();
 
         rxPermissions = new RxPermissions(this);
         if (SystemUtils.isMarshmallow()) {
@@ -71,14 +70,14 @@ public class WelcomeActivity extends BaseActivity {
     }
 
 
-    private void initLogin() {
+//    private void initLogin() {
         //创建微博实例
-        WbSdk.install(this, new AuthInfo(this, Constants.APP_KEY, Constants.REDIRECT_URL, Constants.SCOPE));
+//        WbSdk.install(this, new AuthInfo(this, Constants.APP_KEY, Constants.REDIRECT_URL, Constants.SCOPE));
         //腾讯
-        MusicApp.mTencent = Tencent.createInstance(Constants.APP_ID, this);
+//        MusicApp.mTencent = Tencent.createInstance(Constants.APP_ID, this);
         //初始化socket，因后台服务器压力大，暂时注释
 //        SocketManager.INSTANCE.initSocket();
-    }
+//    }
 
 
     @Override

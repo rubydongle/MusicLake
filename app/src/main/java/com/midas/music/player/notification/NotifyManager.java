@@ -5,9 +5,10 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.RemoteViews;
+
 import androidx.annotation.IntRange;
 import androidx.core.app.NotificationCompat;
-import android.widget.RemoteViews;
 
 import com.midas.music.BuildConfig;
 import com.midas.music.R;
@@ -17,7 +18,7 @@ import static com.midas.music.player.MusicPlayerService.ACTION_CLOSE;
 import static com.midas.music.player.MusicPlayerService.ACTION_NEXT;
 import static com.midas.music.player.MusicPlayerService.ACTION_PLAY_PAUSE;
 import static com.midas.music.player.MusicPlayerService.ACTION_PREV;
-import static com.liulishuo.filedownloader.util.DownloadServiceNotConnectedHelper.stopForeground;
+//import static com.liulishuo.filedownloader.util.DownloadServiceNotConnectedHelper.stopForeground;
 
 /**
  * Created by master on 2018/5/14.
@@ -132,7 +133,7 @@ public class NotifyManager {
     public void close() {
         if (mNotificationManager != null) mNotificationManager.cancel(NOTIFICATION_ID);
 
-        stopForeground(true);
+//        stopForeground(true);
     }
 
 

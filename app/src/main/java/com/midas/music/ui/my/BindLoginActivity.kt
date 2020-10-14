@@ -4,13 +4,11 @@ import android.content.Intent
 import android.view.View
 import com.cyl.musicapi.netease.LoginInfo
 import com.midas.music.R
-import com.midas.music.common.Constants
 import com.midas.music.ui.base.BaseActivity
 import com.midas.music.ui.my.user.User
 import com.midas.music.utils.SPUtils
 import com.midas.music.utils.ToastUtils
 import kotlinx.android.synthetic.main.activity_bind_login.*
-import java.util.*
 
 /**
  * 作者：yonglong on 2016/8/11 18:17
@@ -54,29 +52,29 @@ class BindLoginActivity : BaseActivity<LoginPresenter>(), LoginContract.View {
     private fun loginTo() {
         if (isBinding) return
 
-        username = usernameWrapper.editText!!.text.toString()
-        password = passwordWrapper.editText!!.text.toString()
-        // TODO: 检查　
-        if (!validatePassword(username)) {
-            usernameWrapper.isErrorEnabled = false
-            passwordWrapper.isErrorEnabled = false
-            usernameWrapper.error = "网易云绑定的手机号"
-        } else if (!validatePassword(password)) {
-            usernameWrapper.isErrorEnabled = false
-            passwordWrapper.isErrorEnabled = false
-
-            passwordWrapper.error = "密码需为5~18位的数字或字母"
-        } else {
-            usernameWrapper.isErrorEnabled = false
-            passwordWrapper.isErrorEnabled = false
-            //TODO:登录
-            progressBar.visibility = View.VISIBLE
-
-            val params = HashMap<String, String>()
-            params[Constants.USER_EMAIL] = username
-            params[Constants.PASSWORD] = password
-            mPresenter!!.bindNetease(username, password)
-        }
+//        username = usernameWrapper.editText!!.text.toString()
+//        password = passwordWrapper.editText!!.text.toString()
+//        // TODO: 检查　
+//        if (!validatePassword(username)) {
+//            usernameWrapper.isErrorEnabled = false
+//            passwordWrapper.isErrorEnabled = false
+//            usernameWrapper.error = "网易云绑定的手机号"
+//        } else if (!validatePassword(password)) {
+//            usernameWrapper.isErrorEnabled = false
+//            passwordWrapper.isErrorEnabled = false
+//
+//            passwordWrapper.error = "密码需为5~18位的数字或字母"
+//        } else {
+//            usernameWrapper.isErrorEnabled = false
+//            passwordWrapper.isErrorEnabled = false
+//            //TODO:登录
+//            progressBar.visibility = View.VISIBLE
+//
+//            val params = HashMap<String, String>()
+//            params[Constants.USER_EMAIL] = username
+//            params[Constants.PASSWORD] = password
+//            mPresenter!!.bindNetease(username, password)
+//        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

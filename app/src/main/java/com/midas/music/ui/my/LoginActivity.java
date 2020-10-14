@@ -97,10 +97,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         mSsoHandler.authorize(new SelfWbAuthListener());
     }
 
-    @OnClick(R.id.qqlogin)
-    public void tologin() {
-        mPresenter.loginByQQ(this);
-    }
+//    @OnClick(R.id.qqlogin)
+//    public void tologin() {
+//        mPresenter.loginByQQ(this);
+//    }
 
     @OnClick(R.id.githubLogin)
     public void toGihubLogin() {
@@ -117,7 +117,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             String state = uri.getQueryParameter("state");
             if (mPresenter != null && code != null && state != null) {
                 LogUtil.d(TAG, "onNewIntent code=" + code + " state+" + state);
-                mPresenter.loginByGithub(code, state);
+//                mPresenter.loginByGithub(code, state);
             } else {
                 ToastUtils.show("Github 授权失败");
             }
@@ -192,9 +192,9 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     }
 
     private void updateTokenView(boolean b) {
-        if (mPresenter != null) {
-            mPresenter.loginServer(mAccessToken.getToken(), mAccessToken.getUid(), Constants.OAUTH_WEIBO);
-        }
+//        if (mPresenter != null) {
+//            mPresenter.loginServer(mAccessToken.getToken(), mAccessToken.getUid(), Constants.OAUTH_WEIBO);
+//        }
     }
 
 }
