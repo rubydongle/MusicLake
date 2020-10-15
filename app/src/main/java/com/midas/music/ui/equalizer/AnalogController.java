@@ -58,11 +58,11 @@ public class AnalogController extends View {
         circlePaint.setColor(Color.parseColor("#222222"));
         circlePaint.setStyle(Paint.Style.FILL);
         circlePaint2 = new Paint();
-        circlePaint2.setColor(EqualizerFragment.themeColor);
+        circlePaint2.setColor(EqualizerActivity.themeColor);
 //        circlePaint2.setColor(Color.parseColor("#FFA036"));
         circlePaint2.setStyle(Paint.Style.FILL);
         linePaint = new Paint();
-        linePaint.setColor(EqualizerFragment.themeColor);
+        linePaint.setColor(EqualizerActivity.themeColor);
 //        linePaint.setColor(Color.parseColor("#FFA036"));
         linePaint.setStrokeWidth(7);
         angle = "0.0";

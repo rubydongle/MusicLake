@@ -21,7 +21,7 @@ import com.midas.music.bean.Playlist
 import com.midas.music.event.PlaylistEvent
 import com.midas.music.player.MusicPlayerService
 import com.midas.music.player.PlayManager
-import com.midas.music.ui.equalizer.EqualizerActivity3
+import com.midas.music.ui.equalizer.EqualizerActivity
 import com.midas.music.ui.main.MainActivity
 import com.midas.music.ui.music.artist.activity.ArtistDetailActivity
 import com.midas.music.ui.music.local.fragment.LocalMusicFragment
@@ -80,7 +80,7 @@ object NavigationHelper {
     fun navigateToSoundEffect(context: Activity) {
         try {
 //            val effects = Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL)
-            val effects = Intent(context, EqualizerActivity3::class.java)//AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL)
+            val effects = Intent(context, EqualizerActivity::class.java)//AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL)
             effects.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, PlayManager.getAudioSessionId())
             context.startActivityForResult(effects, 666)
         } catch (e: Exception) {
