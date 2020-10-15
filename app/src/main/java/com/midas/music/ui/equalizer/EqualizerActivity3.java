@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -38,6 +39,8 @@ public class EqualizerActivity3 extends BaseActivity {
     AnalogController bassController;
     @BindView(R.id.controller3D)
     AnalogController reverbController;
+    @BindView(R.id.equalizerBlocker)
+    FrameLayout equalizerBlocker;
 
     SeekBar[] seekBarFinal = new SeekBar[5];
 
@@ -72,10 +75,6 @@ public class EqualizerActivity3 extends BaseActivity {
 
         Settings.isEditing = true;
 
-//        if (getArguments() != null && getArguments().containsKey(ARG_AUDIO_SESSIOIN_ID)){
-//            audioSesionId = getArguments().getInt(ARG_AUDIO_SESSIOIN_ID);
-//        }
-
         audioSesionId = getIntent().getIntExtra(AudioEffect.EXTRA_AUDIO_SESSION, 0);//, PlayManager.getAudioSessionId())
 
         if (Settings.equalizerModel == null){
@@ -98,6 +97,7 @@ public class EqualizerActivity3 extends BaseActivity {
         presetReverb.setEnabled(Settings.isEqualizerEnabled);
 
         mEqualizer.setEnabled(Settings.isEqualizerEnabled);
+        equalizerBlocker.setVisibility(Settings.isEqualizerEnabled ? View.INVISIBLE : View.VISIBLE);
 
         if (Settings.presetPos == 0){
             for (short bandIdx = 0; bandIdx < mEqualizer.getNumberOfBands(); bandIdx++) {
@@ -115,6 +115,7 @@ public class EqualizerActivity3 extends BaseActivity {
                 mEqualizer.setEnabled(isChecked);
                 bassBoost.setEnabled(isChecked);
                 presetReverb.setEnabled(isChecked);
+                equalizerBlocker.setVisibility(isChecked ? View.INVISIBLE : View.VISIBLE);
                 Settings.isEqualizerEnabled = isChecked;
                 Settings.equalizerModel.setEqualizerEnabled(isChecked);
             }
@@ -341,13 +342,11 @@ public class EqualizerActivity3 extends BaseActivity {
                 public void onClick(View v) {
                     chip.setChecked(true);
                     int position = chipGroup.indexOfChild(chip);
-                    Toast.makeText(getContext(), "clicked:" + position, Toast.LENGTH_SHORT).show();
                     try {
                         if (position != 0) {
                             mEqualizer.usePreset((short) (position - 1));
                             Settings.presetPos = position;
                             short numberOfFreqBands = 5;
-
                             final short lowerEqualizerBandLevel = mEqualizer.getBandLevelRange()[0];
 
                             for (short i = 0; i < numberOfFreqBands; i++) {
