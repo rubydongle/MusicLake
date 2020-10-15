@@ -216,7 +216,7 @@ object DaoLitepal {
         if (cursor != null && cursor.count > 0) {
             while (cursor.moveToNext()) {
                 val artist = MusicCursorWrapper(cursor).artists
-//                artist.saveOrUpdate("artistId = ?", artist.artistId.toString())
+                artist.saveOrUpdate("artistId = ?", artist.artistId.toString())
                 results.add(artist)
             }
         }
@@ -233,7 +233,7 @@ object DaoLitepal {
         if (cursor != null && cursor.count > 0) {
             while (cursor.moveToNext()) {
                 val album = MusicCursorWrapper(cursor).album
-//                album.saveOrUpdate("albumId = ?", album.albumId)
+                album.saveOrUpdate("albumId = ?", album.albumId)
                 results.add(album)
             }
         }
