@@ -86,7 +86,8 @@ class SongsFragment : BaseLazyFragment<SongsPresenter>(), SongsContract.View {
     }
 
     override fun onLazyLoad() {
-        mPresenter?.loadSongs(true)
+//        mPresenter?.loadSongs(true)
+        mPresenter?.loadSongs(false)
     }
 
 

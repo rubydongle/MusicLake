@@ -8,7 +8,6 @@ import com.midas.music.api.net.RequestCallBack
 import com.midas.music.bean.CategoryInfo
 import com.midas.music.ui.base.BaseFragment
 import com.midas.music.ui.base.BasePresenter
-import com.midas.music.ui.main.MainActivity
 import com.midas.music.ui.main.PageAdapter
 import com.midas.music.ui.music.mv.MvListFragment
 import kotlinx.android.synthetic.main.frag_mv.*
@@ -43,11 +42,11 @@ class VideoSquareFragment : BaseFragment<BasePresenter<*>?>() {
     override fun retryLoading() {
         super.retryLoading()
         if (errorTextView?.text?.equals("需要登录") == true) {
-            (activity as MainActivity).checkBindNeteaseStatus(false) { success ->
-                if (success) {
-                    loadData()
-                }
-            }
+//            (activity as MainActivity).checkBindNeteaseStatus(false) { success ->
+//                if (success) {
+//                    loadData()
+//                }
+//            }
         } else {
             loadData()
         }

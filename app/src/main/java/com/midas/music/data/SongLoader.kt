@@ -7,8 +7,8 @@ import android.text.TextUtils
 import com.midas.music.bean.Album
 import com.midas.music.bean.Artist
 import com.midas.music.bean.Music
-import com.midas.music.data.db.DaoLitepal
 import com.midas.music.common.Constants
+import com.midas.music.data.db.DaoLitepal
 import com.midas.music.utils.CoverLoader
 import com.midas.music.utils.LogUtil
 import org.litepal.LitePal
@@ -145,10 +145,10 @@ object SongLoader {
         if (data.size == 0 || isReload) {
             data.clear()
             val musicLists = getAllLocalSongs(context)
-//            if (isReload) {
-//                DaoLitepal.updateAlbumList()
-//                DaoLitepal.updateArtistList()
-//            }
+            if (isReload) {
+                DaoLitepal.updateAlbumList()
+                DaoLitepal.updateArtistList()
+            }
             musicLists.forEach {
                 data.add(it)
             }

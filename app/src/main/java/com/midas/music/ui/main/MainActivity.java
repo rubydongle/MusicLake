@@ -10,25 +10,22 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.internal.NavigationMenuView;
+import com.google.android.material.navigation.NavigationView;
 import com.midas.music.R;
 import com.midas.music.bean.Music;
-import com.midas.music.common.Constants;
 import com.midas.music.common.NavigationHelper;
 import com.midas.music.event.CountDownEvent;
-import com.midas.music.event.LoginEvent;
 import com.midas.music.event.MetaChangedEvent;
 import com.midas.music.player.PlayManager;
 import com.midas.music.ui.UIUtilsKt;
 import com.midas.music.ui.base.BaseActivity;
 import com.midas.music.ui.music.search.SearchActivity;
-import com.midas.music.ui.my.BindLoginActivity;
-import com.midas.music.ui.my.user.User;
 import com.midas.music.ui.settings.AboutActivity;
 import com.midas.music.ui.settings.SettingsActivity;
 import com.midas.music.ui.timing.SleepTimerActivity;
@@ -36,21 +33,14 @@ import com.midas.music.ui.widget.CountDownTimerTextView;
 import com.midas.music.utils.CountDownUtils;
 import com.midas.music.utils.CoverLoader;
 import com.midas.music.utils.LogUtil;
-import com.midas.music.utils.SPUtils;
-import com.midas.music.utils.ToastUtils;
 import com.midas.music.utils.Tools;
-import com.google.android.material.internal.NavigationMenuView;
-import com.google.android.material.navigation.NavigationView;
 import com.tencent.bugly.beta.Beta;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import de.hdodenhof.circleimageview.CircleImageView;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -63,10 +53,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     public ImageView mImageView;
     CircleImageView mAvatarIcon;
-//    TextView mName;
-    //    TextView mLoginTv;
-//    ImageView mShowBindIv;
-//    CircleImageView mBindNeteaseView;
     TextView mOnlineNumTv;
 
     private static final String TAG = "MainActivity";
@@ -123,39 +109,39 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     }
 
-    /**
-     * 检查是否绑定网易云音乐
-     *
-     * @param isInit
-     */
-    public void checkBindNeteaseStatus(Boolean isInit, Function1<Boolean, Unit> function1) {
-        UIUtilsKt.getNeteaseLoginStatus(
-                user -> {
-                    ToastUtils.show("已绑定网易云音乐");
-                    LogUtil.d(TAG, "success " + user.getId());
-                    if (isInit) {
-                        User user1 = new User();
-                        user1.setType(Constants.NETEASE);
-                        user1.setAvatar(user.getAvatar());
-                        user1.setName(user.getName());
-                        EventBus.getDefault().post(new LoginEvent(true, user1));
-                    }
-                    if (function1 != null) {
-                        function1.invoke(true);
-                    }
-                    return null;
-                }, () -> {
-                    LogUtil.d(TAG, "fail ");
-                    if (!isInit) {
-                        Intent intent = new Intent(MainActivity.this, BindLoginActivity.class);
-                        startActivityForResult(intent, Constants.REQUEST_CODE_LOGIN);
-                    }
-                    if (function1 != null) {
-                        function1.invoke(false);
-                    }
-                    return null;
-                });
-    }
+//    /**
+//     * 检查是否绑定网易云音乐
+//     *
+//     * @param isInit
+//     */
+//    public void checkBindNeteaseStatus(Boolean isInit, Function1<Boolean, Unit> function1) {
+//        UIUtilsKt.getNeteaseLoginStatus(
+//                user -> {
+//                    ToastUtils.show("已绑定网易云音乐");
+//                    LogUtil.d(TAG, "success " + user.getId());
+//                    if (isInit) {
+//                        User user1 = new User();
+//                        user1.setType(Constants.NETEASE);
+//                        user1.setAvatar(user.getAvatar());
+//                        user1.setName(user.getName());
+//                        EventBus.getDefault().post(new LoginEvent(true, user1));
+//                    }
+//                    if (function1 != null) {
+//                        function1.invoke(true);
+//                    }
+//                    return null;
+//                }, () -> {
+//                    LogUtil.d(TAG, "fail ");
+//                    if (!isInit) {
+//                        Intent intent = new Intent(MainActivity.this, BindLoginActivity.class);
+//                        startActivityForResult(intent, Constants.REQUEST_CODE_LOGIN);
+//                    }
+//                    if (function1 != null) {
+//                        function1.invoke(false);
+//                    }
+//                    return null;
+//                });
+//    }
 
 
     @Override
@@ -475,17 +461,17 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         initData();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == Constants.REQUEST_CODE_LOGIN) {
-            //绑定网易云音乐成功。刷新UI
-            String uid = SPUtils.getAnyByKey(SPUtils.SP_KEY_NETEASE_UID, "");
-            if (uid != null && uid.length() > 0) {
-                LogUtil.d(TAG, "绑定成功 uid = " + uid);
-                checkBindNeteaseStatus(true, null);
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == Constants.REQUEST_CODE_LOGIN) {
+//            //绑定网易云音乐成功。刷新UI
+//            String uid = SPUtils.getAnyByKey(SPUtils.SP_KEY_NETEASE_UID, "");
+//            if (uid != null && uid.length() > 0) {
+//                LogUtil.d(TAG, "绑定成功 uid = " + uid);
+//                checkBindNeteaseStatus(true, null);
+//            }
+//        }
+//    }
 
 }
