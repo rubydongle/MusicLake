@@ -26,6 +26,23 @@ object SongLoader {
         return DaoLitepal.updateArtistList()
     }
 
+    private fun getArtistsForDB(): MutableList<Artist> {
+        return DaoLitepal.getAllArtist()
+
+    }
+
+    fun getLocalArtists(context: Context, isReload: Boolean = true): MutableList<Artist> {
+        val data = getArtistsForDB()
+        if (data.size == 0 || isReload) {
+            data.clear()
+            val artistLists = getAllArtists()
+            artistLists.forEach {
+                data.add(it)
+            }
+        }
+        return data
+    }
+
     /**
      * 获取艺术家所有歌曲
      *
@@ -54,6 +71,23 @@ object SongLoader {
      */
     fun getAllAlbums(): MutableList<Album> {
         return DaoLitepal.updateAlbumList()
+    }
+
+    private fun getAlbumsForDB(): MutableList<Album> {
+        return DaoLitepal.getAllAlbum()
+
+    }
+
+    fun getLocalAlbums(context: Context, isReload: Boolean = true): MutableList<Album> {
+        val data = getAlbumsForDB()
+        if (data.size == 0 || isReload) {
+            data.clear()
+            val artistLists = getAllAlbums()
+            artistLists.forEach {
+                data.add(it)
+            }
+        }
+        return data
     }
 
     /**
@@ -131,6 +165,8 @@ object SongLoader {
     fun getFavoriteSong(): MutableList<Music> {
         return DaoLitepal.getMusicList(Constants.PLAYLIST_LOVE_ID)
     }
+
+
 
     /**
      * 获取本地歌曲

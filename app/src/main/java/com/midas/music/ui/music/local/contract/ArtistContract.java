@@ -17,6 +17,6 @@ public interface ArtistContract {
 
     interface Presenter extends BaseContract.BasePresenter<View> {
 
-        void loadArtists(String action);
+        void loadArtists(String action, boolean isReload);
     }
 }

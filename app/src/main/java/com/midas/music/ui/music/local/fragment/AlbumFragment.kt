@@ -56,11 +56,11 @@ class AlbumFragment : BaseLazyFragment<AlbumPresenter>(), AlbumsContract.View {
     }
 
     override fun onLazyLoad() {
-        mPresenter?.loadAlbums("all")
+        mPresenter?.loadAlbums("all", false)
     }
 
     override fun onSwapLazyLoad() {
-        onLazyLoad()
+        mPresenter?.loadAlbums("all", true)
     }
 
     override fun showLoading() {
@@ -80,7 +80,7 @@ class AlbumFragment : BaseLazyFragment<AlbumPresenter>(), AlbumsContract.View {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun updateDownloadEvent(event: FileEvent) {
-        mPresenter?.loadAlbums("all")
+        mPresenter?.loadAlbums("all", true)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

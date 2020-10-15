@@ -14,7 +14,7 @@ public interface AlbumsContract {
 
     interface Presenter extends BaseContract.BasePresenter<View> {
 
-        void loadAlbums(String action);
+        void loadAlbums(String action, boolean isReload);
 
     }
 }

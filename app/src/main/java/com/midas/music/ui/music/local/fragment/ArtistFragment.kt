@@ -46,11 +46,11 @@ class ArtistFragment : BaseLazyFragment<ArtistPresenter>(), ArtistContract.View 
     override fun listener() {}
 
     override fun onLazyLoad() {
-        mPresenter?.loadArtists("all")
+        mPresenter?.loadArtists("all", false)
     }
 
     override fun onSwapLazyLoad() {
-        onLazyLoad()
+        mPresenter?.loadArtists("all", true)
     }
 
     override fun showLoading() {
@@ -68,7 +68,7 @@ class ArtistFragment : BaseLazyFragment<ArtistPresenter>(), ArtistContract.View 
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun updateDownloadEvent(event: FileEvent) {
-        mPresenter?.loadArtists("all")
+        mPresenter?.loadArtists("all", true)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
