@@ -7,29 +7,30 @@ import com.midas.music.di.module.FragmentModule;
 import com.midas.music.di.scope.ContextLife;
 import com.midas.music.di.scope.PerFragment;
 import com.midas.music.ui.music.artist.fragment.ArtistInfoFragment;
-import com.midas.music.ui.music.discover.artist.QQArtistListFragment;
+import com.midas.music.ui.music.artist.fragment.ArtistSongsFragment;
+import com.midas.music.ui.music.bottom.PlayControlFragment;
+import com.midas.music.ui.music.charts.fragment.ChartsDetailFragment;
 import com.midas.music.ui.music.discover.DiscoverFragment;
+import com.midas.music.ui.music.discover.artist.QQArtistListFragment;
 import com.midas.music.ui.music.local.fragment.AlbumDetailFragment;
 import com.midas.music.ui.music.local.fragment.AlbumFragment;
 import com.midas.music.ui.music.local.fragment.ArtistFragment;
-import com.midas.music.ui.music.artist.fragment.ArtistSongsFragment;
+import com.midas.music.ui.music.local.fragment.FoldersFragment;
 import com.midas.music.ui.music.local.fragment.LocalPlaylistFragment;
 import com.midas.music.ui.music.local.fragment.LocalVideoFragment;
-import com.midas.music.ui.music.local.fragment.FoldersFragment;
+import com.midas.music.ui.music.local.fragment.SongsFragment;
 import com.midas.music.ui.music.mv.MvListFragment;
-import com.midas.music.ui.music.charts.fragment.ChartsDetailFragment;
 import com.midas.music.ui.music.mv.MvSearchListFragment;
 import com.midas.music.ui.music.mv.VideoCommentFragment;
 import com.midas.music.ui.music.mv.VideoDetailFragment;
-import com.midas.music.ui.music.playlist.love.LoveFragment;
 import com.midas.music.ui.music.my.MyMusicFragment;
-import com.midas.music.ui.music.bottom.PlayControlFragment;
-import com.midas.music.ui.music.playlist.detail.PlaylistDetailFragment;
 import com.midas.music.ui.music.playlist.PlaylistFragment;
+import com.midas.music.ui.music.playlist.detail.PlaylistDetailFragment;
 import com.midas.music.ui.music.playlist.history.RecentlyFragment;
-import com.midas.music.ui.music.local.fragment.SongsFragment;
+import com.midas.music.ui.music.playlist.love.LoveFragment;
 import com.midas.music.ui.music.playlist.square.TopPlaylistFragment;
 import com.midas.music.ui.music.playqueue.PlayQueueFragment;
+import com.midas.music.ui.music.search.fragment.SearchLocalFragment;
 import com.midas.music.ui.music.search.fragment.SearchSongsFragment;
 import com.midas.music.ui.music.search.fragment.YoutubeSearchFragment;
 import com.midas.music.ui.my.BindLoginActivity;
@@ -99,6 +100,8 @@ public interface FragmentComponent {
     void inject(@NotNull ArtistInfoFragment artistInfoFragment);
 
     void inject(@NotNull com.midas.music.ui.music.artist.fragment.AlbumFragment albumFragment);
+
+    void inject(@NotNull SearchLocalFragment searchLocalFragment);
 
     void inject(@NotNull SearchSongsFragment searchSongsFragment);
 

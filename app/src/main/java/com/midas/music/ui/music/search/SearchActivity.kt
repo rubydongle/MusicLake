@@ -9,21 +9,21 @@ import android.view.MenuItem
 import android.view.View
 import android.view.animation.DecelerateInterpolator
 import android.view.inputmethod.EditorInfo
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
 import com.midas.music.R
 import com.midas.music.bean.HotSearchBean
 import com.midas.music.bean.Music
 import com.midas.music.bean.SearchHistoryBean
-import com.midas.music.data.db.DaoLitepal
 import com.midas.music.common.Extras
+import com.midas.music.data.db.DaoLitepal
 import com.midas.music.ui.base.BaseActivity
 import com.midas.music.ui.main.PageAdapter
-import com.midas.music.ui.music.search.fragment.SearchSongsFragment
+import com.midas.music.ui.music.search.fragment.SearchLocalFragment
 import com.midas.music.ui.music.search.fragment.YoutubeSearchFragment
 import com.midas.music.utils.AnimationUtils
 import com.midas.music.utils.Tools
-import com.google.android.flexbox.FlexDirection
-import com.google.android.flexbox.FlexboxLayoutManager
-import com.google.android.flexbox.JustifyContent
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.toolbar_search_layout.*
 import java.util.*
@@ -293,7 +293,8 @@ class SearchActivity : BaseActivity<SearchPresenter>(), SearchContract.View {
      */
     private fun setupViewPager() {
         val mAdapter = PageAdapter(supportFragmentManager)
-        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.ANY), "本地")
+        mAdapter.addFragment(SearchLocalFragment.newInstance(queryString, SearchEngine.Filter.LOCAL), "本地")
+//        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.ANY), "所有")
 //        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.QQ), "QQ")
 //        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.NETEASE), "网易云")
 //        mAdapter.addFragment(SearchSongsFragment.newInstance(queryString, SearchEngine.Filter.XIAMI), "虾米")

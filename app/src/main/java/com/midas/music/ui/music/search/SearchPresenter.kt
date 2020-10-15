@@ -1,6 +1,7 @@
 package com.midas.music.ui.music.search
 
 import com.cyl.musicapi.netease.SearchInfo
+import com.google.api.services.youtube.model.SearchListResponse
 import com.midas.music.MusicApp
 import com.midas.music.api.music.MusicApiServiceImpl
 import com.midas.music.api.music.baidu.BaiduApiServiceImpl
@@ -11,11 +12,10 @@ import com.midas.music.api.youtube.YoutubeDataApi
 import com.midas.music.bean.HotSearchBean
 import com.midas.music.bean.Music
 import com.midas.music.bean.SearchResult
-import com.midas.music.data.db.DaoLitepal
 import com.midas.music.common.Constants
+import com.midas.music.data.db.DaoLitepal
 import com.midas.music.ui.base.BasePresenter
 import com.midas.music.utils.LogUtil
-import com.google.api.services.youtube.model.SearchListResponse
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import javax.inject.Inject
@@ -87,6 +87,7 @@ constructor() : BasePresenter<SearchContract.View>(), SearchContract.Presenter {
         mView?.showLoading()
         doAsync {
             val result = DaoLitepal.searchLocalMusic(key)
+            LogUtil.d("ruby search local result:$result")
             uiThread {
                 mView?.hideLoading()
                 mView?.showSearchResult(result)

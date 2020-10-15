@@ -7,7 +7,7 @@ package com.midas.music.ui.music.search;
  */
 public class SearchEngine {
     public enum Filter {
-        ANY,CP, QQ, NETEASE, XIAMI, BAIDU,REPEAT
+        ANY,LOCAL, CP, QQ, NETEASE, XIAMI, BAIDU,REPEAT
     }
 }
 
