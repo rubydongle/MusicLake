@@ -12,7 +12,10 @@ import com.midas.music.api.net.RequestCallBack
 import com.midas.music.bean.VideoInfoBean
 import com.midas.music.common.Extras
 import com.midas.music.ui.base.BaseLazyFragment
-import com.midas.music.ui.music.mv.*
+import com.midas.music.ui.music.mv.MvListContract
+import com.midas.music.ui.music.mv.MvListPresenter
+import com.midas.music.ui.music.mv.VideoDetailActivity
+import com.midas.music.ui.music.mv.VideoListAdapter
 import com.midas.music.utils.ToastUtils
 import kotlinx.android.synthetic.main.fragment_recyclerview_notoolbar.*
 import org.jetbrains.anko.support.v4.startActivity
@@ -68,6 +71,10 @@ class VideoListFragment : BaseLazyFragment<MvListPresenter?>(), MvListContract.V
     override fun onLazyLoad() {
         showLoading()
         loadVideoList(mOffset)
+    }
+    
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
     }
 
     private fun loadVideoList(offset: Int) {

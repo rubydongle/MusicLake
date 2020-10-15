@@ -101,6 +101,10 @@ class ChartsDetailFragment : BaseLazyFragment<OnlinePlaylistPresenter>(), Online
         mPresenter?.loadNeteaseTopList()
     }
 
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
+    }
+
     override fun loadData() {
 
     }

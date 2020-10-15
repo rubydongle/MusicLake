@@ -102,7 +102,7 @@ public abstract class BaseLazyFragment<T extends BaseContract.BasePresenter> ext
                     if (mSwipeRefreshLayout != null) {
                         mSwipeRefreshLayout.setRefreshing(false);
                     }
-                    onLazyLoad();
+                    onSwapLazyLoad();
                 }, 1000);
             });
         }
@@ -263,5 +263,8 @@ public abstract class BaseLazyFragment<T extends BaseContract.BasePresenter> ext
 
     @UiThread
     public abstract void onLazyLoad();
+
+    @UiThread
+    public abstract void onSwapLazyLoad();
 
 }

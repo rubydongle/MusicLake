@@ -1,14 +1,15 @@
 package com.midas.music.ui.music.local.fragment;
 
 import android.os.Bundle;
-import com.google.android.material.tabs.TabLayout;
-import androidx.viewpager.widget.ViewPager;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
 import com.midas.music.R;
-import com.midas.music.ui.base.BaseLazyFragment;
 import com.midas.music.common.Extras;
+import com.midas.music.ui.base.BaseLazyFragment;
 import com.midas.music.ui.main.PageAdapter;
 
 import butterknife.BindView;
@@ -66,5 +67,10 @@ public class LocalMusicFragment extends BaseLazyFragment {
         mTabLayout.setupWithViewPager(viewPager);
         viewPager.setOffscreenPageLimit(3);
         viewPager.setCurrentItem(0);
+    }
+
+    @Override
+    public void onSwapLazyLoad() {
+        onLazyLoad();
     }
 }

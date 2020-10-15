@@ -97,6 +97,9 @@ class SearchSongsFragment : BaseLazyFragment<SearchPresenter>(), SearchContract.
         mPresenter?.search(searchInfo, type, limit, mOffset)
     }
 
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
+    }
 
     /**
      * 更新歌曲列表

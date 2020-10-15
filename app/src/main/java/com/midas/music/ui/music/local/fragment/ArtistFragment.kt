@@ -1,23 +1,19 @@
 package com.midas.music.ui.music.local.fragment
 
 import android.os.Bundle
-
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-
 import com.midas.music.R
-import com.midas.music.ui.base.BaseLazyFragment
 import com.midas.music.bean.Artist
+import com.midas.music.event.FileEvent
+import com.midas.music.ui.base.BaseLazyFragment
 import com.midas.music.ui.music.local.adapter.ArtistAdapter
 import com.midas.music.ui.music.local.contract.ArtistContract
 import com.midas.music.ui.music.local.presenter.ArtistPresenter
-
-import java.util.ArrayList
-
-import com.midas.music.event.FileEvent
 import kotlinx.android.synthetic.main.fragment_recyclerview_notoolbar.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import java.util.*
 
 class ArtistFragment : BaseLazyFragment<ArtistPresenter>(), ArtistContract.View {
 
@@ -53,6 +49,9 @@ class ArtistFragment : BaseLazyFragment<ArtistPresenter>(), ArtistContract.View 
         mPresenter?.loadArtists("all")
     }
 
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
+    }
 
     override fun showLoading() {
         super.showLoading()

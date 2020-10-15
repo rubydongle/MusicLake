@@ -114,6 +114,10 @@ class DiscoverFragment : BaseLazyFragment<DiscoverPresenter>(), DiscoverContract
         mPresenter?.loadPersonalizedPlaylist()
     }
 
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
+    }
+
     override fun loadData() {
     }
 

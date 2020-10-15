@@ -1,23 +1,19 @@
 package com.midas.music.ui.music.local.fragment
 
 import android.os.Bundle
-
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-
 import com.midas.music.R
-import com.midas.music.ui.base.BaseLazyFragment
 import com.midas.music.bean.Album
+import com.midas.music.event.FileEvent
+import com.midas.music.ui.base.BaseLazyFragment
 import com.midas.music.ui.music.local.adapter.AlbumAdapter
 import com.midas.music.ui.music.local.contract.AlbumsContract
 import com.midas.music.ui.music.local.presenter.AlbumPresenter
-
-import java.util.ArrayList
-
-import com.midas.music.event.FileEvent
 import kotlinx.android.synthetic.main.fragment_recyclerview_notoolbar.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import java.util.*
 
 /**
  * 功能：本地歌曲列表
@@ -61,6 +57,10 @@ class AlbumFragment : BaseLazyFragment<AlbumPresenter>(), AlbumsContract.View {
 
     override fun onLazyLoad() {
         mPresenter?.loadAlbums("all")
+    }
+
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
     }
 
     override fun showLoading() {

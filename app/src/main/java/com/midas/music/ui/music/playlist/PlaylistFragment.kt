@@ -1,9 +1,9 @@
 package com.midas.music.ui.music.playlist
 
 import android.os.Bundle
+import android.util.Pair
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import android.util.Pair
 import com.midas.music.R
 import com.midas.music.bean.Music
 import com.midas.music.bean.Playlist
@@ -92,5 +92,9 @@ class PlaylistFragment : BaseLazyFragment<PlaylistPresenter>(), PlaylistContract
     override fun onLazyLoad() {
         val tag = arguments?.getString("Tag", "全部")
         tag?.let { mPresenter?.loadNetease(it) }
+    }
+
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
     }
 }

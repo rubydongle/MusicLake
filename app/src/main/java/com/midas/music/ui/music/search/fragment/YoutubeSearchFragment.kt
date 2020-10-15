@@ -96,6 +96,9 @@ class YoutubeSearchFragment : BaseLazyFragment<SearchPresenter>(), SearchContrac
         searchByYouTube(searchInfo, nextPagerToken)
     }
 
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
+    }
 
     /**
      * 更新歌曲列表

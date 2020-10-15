@@ -50,6 +50,10 @@ class FoldersFragment : BaseLazyFragment<FoldersPresenter>(), FoldersContract.Vi
         mPresenter?.loadFolders()
     }
 
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
+    }
+
     override fun showEmptyView() {
         mAdapter?.setEmptyView(R.layout.view_song_empty)
     }

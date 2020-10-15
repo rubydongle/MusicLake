@@ -131,6 +131,11 @@ public class MvSearchListFragment extends BaseLazyFragment<MvListPresenter> impl
         mvList.clear();
     }
 
+    @Override
+    public void onSwapLazyLoad() {
+        onLazyLoad();
+    }
+
 
     @Override
     public void showMvList(List<MvInfoDetail> mvList) {

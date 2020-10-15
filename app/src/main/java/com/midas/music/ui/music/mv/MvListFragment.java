@@ -129,6 +129,10 @@ public class MvListFragment extends BaseLazyFragment<MvListPresenter> implements
         }
     }
 
+    @Override
+    public void onSwapLazyLoad() {
+        onLazyLoad();
+    }
 
     @Override
     public void showMvList(List<MvInfoDetail> mvList) {

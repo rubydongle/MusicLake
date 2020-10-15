@@ -47,6 +47,10 @@ class LyricFragment : BaseLazyFragment<BasePresenter<BaseContract.BaseView>>() {
         showLyric(FloatLyricViewManager.lyricInfo, true)
     }
 
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
+    }
+
     override fun initViews() {
 
     }

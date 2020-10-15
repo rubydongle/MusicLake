@@ -8,7 +8,7 @@ import com.midas.music.bean.MvInfoBean
 import com.midas.music.bean.VideoInfoBean
 import com.midas.music.common.Extras
 import com.midas.music.ui.base.BaseLazyFragment
-import kotlinx.android.synthetic.main.frag_mv_list.recyclerView
+import kotlinx.android.synthetic.main.frag_mv_list.*
 
 /**
  * 作者：yonglong
@@ -104,5 +104,9 @@ class VideoCommentFragment : BaseLazyFragment<VideoDetailPresenter>(), VideoDeta
         mType = arguments?.getInt(Extras.VIDEO_TYPE) ?: 1
         showLoading()
         mPresenter?.loadMvComment(vid, mType, 0)
+    }
+
+    override fun onSwapLazyLoad() {
+        onLazyLoad()
     }
 }
